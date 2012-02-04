@@ -217,7 +217,7 @@
       ], 
       "http://solomid.net/guides.php?g=1562": [
         "Jungle WARWICKKKKKKK Guide", 
-        222, 
+        223, 
         0, 
         "TheOddOne", 
         true
@@ -233,7 +233,7 @@
       ], 
       "http://solomid.net/guides.php?g=1562": [
         "Jungle WARWICKKKKKKK Guide", 
-        222, 
+        223, 
         0, 
         "TheOddOne", 
         true
@@ -362,7 +362,7 @@
       "http://solomid.net/guides.php?g=7315": [
         "Just keep Rolling(Jungle Rammus guide)(Updated for patch 1.0.0.132))", 
         37, 
-        2, 
+        3, 
         "Glass", 
         false
       ], 
@@ -1441,11 +1441,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/Ap": [
-        "Fus Ro Dah!", 
-        6, 
+      "http://clgaming.net/guide/sd": [
+        "Tanky Shyvana", 
+        -8, 
         0, 
-        "Wulf", 
+        "blecktox", 
         false
       ], 
       "http://solomid.net/guides.php?g=9415": [
@@ -1648,7 +1648,7 @@
       "http://solomid.net/guides.php?g=4295": [
         "A Wall of Text About Supporting as Sona", 
         32, 
-        59, 
+        60, 
         "astrolia", 
         false
       ], 
@@ -2024,7 +2024,7 @@
     {
       "http://solomid.net/guides.php?g=16444": [
         "Ziggs for Morons", 
-        22, 
+        23, 
         0, 
         "a moron", 
         false
@@ -2033,64 +2033,9 @@
     {
       "http://solomid.net/guides.php?g=16444": [
         "Ziggs for Morons", 
-        22, 
+        23, 
         0, 
         "a moron", 
-        false
-      ]
-    }
-  ], 
-  "Masteryi": [
-    {
-      "http://solomid.net/guides.php?g=12072": [
-        "A Guide to Solo Top Yi", 
-        13, 
-        0, 
-        "MarineRevenge", 
-        false
-      ], 
-      "http://clgaming.net/guide/mv": [
-        "Jungle YI. The Backdoor YI", 
-        4, 
-        60, 
-        "instantlock", 
-        false
-      ], 
-      "http://clgaming.net/guide/66": [
-        "[SUPBRO] Jungle Yi", 
-        2, 
-        30, 
-        "Minabuse", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=4696": [
-        "Master Yi-nvincible!", 
-        12, 
-        76, 
-        "lieutenantshinysides", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=3478": [
-        "How to farm everything with Master Yi", 
-        104, 
-        188, 
-        "Dyrus", 
-        true
-      ]
-    }, 
-    {
-      "http://solomid.net/guides.php?g=12072": [
-        "A Guide to Solo Top Yi", 
-        13, 
-        0, 
-        "MarineRevenge", 
-        false
-      ], 
-      "http://clgaming.net/guide/Sz": [
-        "-Shrimps- Ap Yi", 
-        2, 
-        0, 
-        "xSoyShrimp", 
         false
       ]
     }
@@ -2244,11 +2189,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/sc": [
-        "Akali, Crazy burst", 
-        -2, 
+      "http://clgaming.net/guide/Xc": [
+        "Akali pwned ALL", 
         0, 
-        "SadStriker", 
+        0, 
+        "Gazugaa", 
         false
       ], 
       "http://solomid.net/guides.php?g=8022": [
@@ -3687,7 +3632,7 @@
       ], 
       "http://solomid.net/guides.php?g=3963": [
         "The Queen of Freljord... and kiting...", 
-        47, 
+        48, 
         0, 
         "Fr3shM4gic", 
         false
@@ -3703,7 +3648,7 @@
       ], 
       "http://solomid.net/guides.php?g=3963": [
         "The Queen of Freljord... and kiting...", 
-        47, 
+        48, 
         0, 
         "Fr3shM4gic", 
         false
@@ -3900,7 +3845,7 @@
       ], 
       "http://solomid.net/guides.php?g=9898": [
         "I don't always spin, but when I spin I win", 
-        58, 
+        59, 
         49, 
         "FYA Umashi", 
         true
@@ -3916,7 +3861,7 @@
       ], 
       "http://solomid.net/guides.php?g=9898": [
         "I don't always spin, but when I spin I win", 
-        58, 
+        59, 
         49, 
         "FYA Umashi", 
         true
@@ -4215,6 +4160,33 @@
         60, 
         "FYA Umashi", 
         true
+      ]
+    }
+  ], 
+  "Xin Zhao": [
+    {
+      "http://clgaming.net/guide/NE": [
+        "Luck? or Skill?", 
+        0, 
+        0, 
+        "Orkalouses", 
+        false
+      ], 
+      "http://clgaming.net/guide/gn": [
+        "Charge to Victory", 
+        5, 
+        7, 
+        "cougher0", 
+        false
+      ]
+    }, 
+    {
+      "http://clgaming.net/guide/NE": [
+        "Luck? or Skill?", 
+        0, 
+        0, 
+        "Orkalouses", 
+        false
       ]
     }
   ], 
@@ -4526,7 +4498,7 @@
       "http://solomid.net/guides.php?g=1589": [
         "The tiny master of bursts.", 
         56, 
-        75, 
+        76, 
         "exekillan", 
         false
       ], 
@@ -4692,6 +4664,33 @@
       ]
     }
   ], 
+  "Master Yi": [
+    {
+      "http://clgaming.net/guide/mv": [
+        "Jungle YI. The Backdoor YI", 
+        4, 
+        60, 
+        "instantlock", 
+        false
+      ], 
+      "http://clgaming.net/guide/66": [
+        "[SUPBRO] Jungle Yi", 
+        2, 
+        30, 
+        "Minabuse", 
+        false
+      ]
+    }, 
+    {
+      "http://clgaming.net/guide/Sz": [
+        "-Shrimps- Ap Yi", 
+        2, 
+        0, 
+        "xSoyShrimp", 
+        false
+      ]
+    }
+  ], 
   "Ahri": [
     {
       "http://solomid.net/guides.php?g=12561": [
@@ -4805,47 +4804,6 @@
         113, 
         46, 
         "Reginald", 
-        true
-      ]
-    }
-  ], 
-  "Xinzhao": [
-    {
-      "http://clgaming.net/guide/NE": [
-        "Luck? or Skill?", 
-        0, 
-        0, 
-        "Orkalouses", 
-        false
-      ], 
-      "http://clgaming.net/guide/gn": [
-        "Charge to Victory", 
-        5, 
-        7, 
-        "cougher0", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=4148": [
-        "Win Nhao(Jungle) v2", 
-        104, 
-        18, 
-        "Dun1007`", 
-        true
-      ]
-    }, 
-    {
-      "http://clgaming.net/guide/NE": [
-        "Luck? or Skill?", 
-        0, 
-        0, 
-        "Orkalouses", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=4148": [
-        "Win Nhao(Jungle) v2", 
-        104, 
-        18, 
-        "Dun1007`", 
         true
       ]
     }
