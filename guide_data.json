@@ -3859,11 +3859,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/Fu": [
-        "Magykal AD Koggy", 
+      "http://clgaming.net/guide/ed": [
+        "Time to FEAST!", 
+        1, 
         0, 
-        60, 
-        "Kandarew", 
+        "puRe`", 
         false
       ], 
       "http://solomid.net/guides.php?g=11435": [
@@ -4580,7 +4580,7 @@
       ], 
       "http://solomid.net/guides.php?g=6133": [
         "The Aura Storm, (babysitting guide)", 
-        1, 
+        0, 
         8, 
         "Windweaver", 
         false
@@ -4610,7 +4610,7 @@
     {
       "http://solomid.net/guides.php?g=6133": [
         "The Aura Storm, (babysitting guide)", 
-        1, 
+        0, 
         8, 
         "Windweaver", 
         false
