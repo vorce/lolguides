@@ -1,0 +1,172 @@
+.btn.custom { background-color: hsl(195, 60%, 35%); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="hsl(195, 60%, 45%)", endColorstr="hsl(195, 60%, 35%)"); background-repeat: repeat-x; background-image: -khtml-gradient(linear, left top, left bottom, from(hsl(195, 60%, 45%)), to(hsl(195, 60%, 35%))); background-image: -moz-linear-gradient(top, hsl(195, 60%, 45%), hsl(195, 60%, 35%)); background-image: -ms-linear-gradient(top, hsl(195, 60%, 45%), hsl(195, 60%, 35%)); background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsl(195, 60%, 45%)), color-stop(100%, hsl(195, 60%, 35%))); background-image: -webkit-linear-gradient(top, hsl(195, 60%, 45%), hsl(195, 60%, 35%)); background-image: -o-linear-gradient(top, hsl(195, 60%, 45%), hsl(195, 60%, 35%)); background-image: linear-gradient(hsl(195, 60%, 45%), hsl(195, 60%, 35%)); border-color: hsl(195, 60%, 35%) hsl(195, 60%, 35%) hsl(195, 60%, 32.5%); color: #fff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16); -webkit-font-smoothing: antialiased; }
+
+.brand {
+    font-family: 'Days One', sans-serif;
+}
+
+img.logo {
+   position: absolute;
+    
+    top: -30px;
+    left: -60px;
+}
+
+.container h1 {
+    font-family: 'Days One', sans-serif;
+    font-weight: normal;
+    color: rgba(188, 26, 15, 1.0);
+    text-transform: uppercase;
+}
+
+.hero-unit {
+    background-image: url('../gfx/body_bg.gif');
+    padding-top: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    margin-top: 15px;
+}
+
+.hero-unit h1 {
+    font-family: 'Days One', sans-serif;
+    font-size: 34pt;
+    // color: #263138;
+    // color: rgba(50, 114, 154, 1.0);
+    //color: rgba(175, 202, 193, 1.0);
+    //color: #bcd1c6;
+    letter-spacing: 0;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+.hero-unit h2 {
+    font-family: 'Days One', sans-serif;
+	color: rgba(59, 41, 67, 1.0);
+	font-weight: normal;
+}
+
+.hero-unit p {
+    font-family: 'Unna', serif;
+    font-size: 15pt;
+}
+
+#champs {
+    font-family: 'Unna', serif;
+    font-size: 17pt; 
+    letter-spacing: 0.5px;
+}
+
+.nav {
+     font-family: 'Unna', serif;
+     font-size: 12pt;
+}
+
+.guidetable {
+ border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+ padding: 2px;
+ font-family: 'Unna', serif;
+ background-color: rgba(127, 127, 127, 0.1);
+ border-top: 1px solid rgba(30, 30, 30, 0.1);
+ // margin-right: 40px;
+}
+
+.stats {
+    padding: 10px;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 0.7;
+    text-align: center;
+}
+
+.guidename {
+    width: 400px;
+    padding: 10px;
+    font-size: 17pt;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.guidename a {
+    text-decoration: none;
+}
+
+.guidename a:hover {
+    text-decoration: underline;
+}
+
+.guideauthor {
+    padding: 10px;
+    // padding-left: 5px;
+    font-size: 14pt;
+}
+
+span.norm {
+    font-size: 7pt;
+}
+
+span.big {
+    font-size: 20pt;
+}
+
+img.icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li.unstyled {
+    padding-bottom: 15px;
+}
+
+img.champ {
+    border: 1px solid white;
+    vertical-align: middle;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+}
+
+table.table-guide {
+    font-family: 'Unna', serif;
+    padding-bottom: 0;
+    height: 100px;
+}
+
+table.table-guide td {
+    border: none;
+}
+
+td.guide-data {
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 0.7;
+    // vertical-align: middle;
+}
+
+td.guide-title {
+   font-size: 14pt; 
+   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.5);
+   width: 225px;
+}
+
+td.guide-title a:hover {
+    color: rgba(147, 66, 64, 1.0);
+	text-decoration: none;
+}
+
+td.guide-author {
+    font-size: 12pt;
+}
+
+td.guide-icon {
+    // vertical-align: middle;
+    /*display: block;
+    margin-left: auto;
+    margin-right: auto;*/
+}
+
+.well {
+    // background-image: url('../gfx/body_bg.gif');
+    padding-bottom: 0;
+}
+
+h2.h2-guide {
+    text-transform: uppercase;
+}
