@@ -128,7 +128,7 @@
       "http://solomid.net/guides.php?g=9879": [
         "[Updated for Jungle remake] No problem - Standard stuff", 
         65, 
-        13, 
+        14, 
         "Teodur", 
         false
       ], 
@@ -147,7 +147,7 @@
         false
       ], 
       "http://solomid.net/guides.php?g=2954": [
-        "A Complete Guide to Shaco (Yes he can team-fight!)", 
+        "Stop Banning Shaco, I Want Free Wins", 
         143, 
         0, 
         "rbdrumline", 
@@ -170,7 +170,7 @@
         false
       ], 
       "http://solomid.net/guides.php?g=2954": [
-        "A Complete Guide to Shaco (Yes he can team-fight!)", 
+        "Stop Banning Shaco, I Want Free Wins", 
         143, 
         0, 
         "rbdrumline", 
@@ -431,7 +431,7 @@
       "http://solomid.net/guides.php?g=2147": [
         "Spitfire Ace", 
         76, 
-        46, 
+        47, 
         "Chaox", 
         true
       ], 
@@ -796,7 +796,7 @@
       "http://solomid.net/guides.php?g=6727": [
         "Riven 102", 
         61, 
-        137, 
+        138, 
         "Xpecial", 
         true
       ], 
@@ -810,7 +810,7 @@
       "http://solomid.net/guides.php?g=6486": [
         "Riven 101 (Old Version)", 
         -16, 
-        137, 
+        138, 
         "Xpecial", 
         true
       ]
@@ -1249,7 +1249,7 @@
       "http://solomid.net/guides.php?g=8896": [
         "King AD V2", 
         159, 
-        19, 
+        20, 
         "Chaox", 
         true
       ], 
@@ -1427,7 +1427,7 @@
       ], 
       "http://solomid.net/guides.php?g=9415": [
         "Updated Shyvana Guide 1/26/2012", 
-        135, 
+        136, 
         9, 
         "FYA Umashi", 
         true
@@ -1450,7 +1450,7 @@
       ], 
       "http://solomid.net/guides.php?g=9415": [
         "Updated Shyvana Guide 1/26/2012", 
-        135, 
+        136, 
         9, 
         "FYA Umashi", 
         true
@@ -1881,7 +1881,7 @@
       "http://solomid.net/guides.php?g=3828": [
         "AD Kayle: Maximizing Kayle's Skills", 
         28, 
-        41, 
+        42, 
         "thresholden", 
         false
       ], 
@@ -2024,7 +2024,7 @@
     {
       "http://solomid.net/guides.php?g=16444": [
         "Ziggs for Morons", 
-        30, 
+        31, 
         0, 
         "a moron", 
         false
@@ -2033,7 +2033,7 @@
     {
       "http://solomid.net/guides.php?g=16444": [
         "Ziggs for Morons", 
-        30, 
+        31, 
         0, 
         "a moron", 
         false
@@ -2176,7 +2176,7 @@
       "http://solomid.net/guides.php?g=1785": [
         "Through Twilight's Veil (v.2)", 
         413, 
-        16, 
+        17, 
         "Westrice", 
         true
       ], 
@@ -2561,7 +2561,7 @@
       "http://solomid.net/guides.php?g=2169": [
         "One Man Army", 
         87, 
-        215, 
+        216, 
         "Westrice", 
         true
       ]
@@ -2650,7 +2650,7 @@
       "http://solomid.net/guides.php?g=8785": [
         "Solo Queue Smackdown v2", 
         140, 
-        8, 
+        9, 
         "The Rain Man", 
         true
       ], 
@@ -2780,14 +2780,14 @@
       ], 
       "http://solomid.net/guides.php?g=151": [
         "The Nasus Guide", 
-        317, 
+        318, 
         0, 
         "Hyfe", 
         false
       ], 
       "http://solomid.net/guides.php?g=9133": [
         "Nasus is too mainstream", 
-        4, 
+        5, 
         13, 
         "Seronoth", 
         false
@@ -2803,7 +2803,7 @@
       ], 
       "http://solomid.net/guides.php?g=151": [
         "The Nasus Guide", 
-        317, 
+        318, 
         0, 
         "Hyfe", 
         false
@@ -3240,7 +3240,7 @@
       ], 
       "http://solomid.net/guides.php?g=8046": [
         "Jungle Skarner - The Battle Approaches", 
-        25, 
+        26, 
         54, 
         "Shotgun Heavy", 
         false
@@ -3420,7 +3420,7 @@
       "http://solomid.net/guides.php?g=3881": [
         "King of Games (Trinitykong)", 
         58, 
-        0, 
+        1, 
         "turbOpun", 
         false
       ], 
@@ -3769,7 +3769,7 @@
     {
       "http://solomid.net/guides.php?g=5687": [
         "Acid Lobster", 
-        135, 
+        134, 
         99, 
         "Chaox", 
         true
@@ -3957,7 +3957,7 @@
     {
       "http://solomid.net/guides.php?g=16452": [
         "Holy Jungle Cow", 
-        4, 
+        8, 
         0, 
         "TooLeegitToQuit", 
         false
@@ -4113,7 +4113,7 @@
       "http://clgaming.net/guide/y1": [
         "I'm the best toplaner.", 
         2, 
-        7, 
+        0, 
         "maultii", 
         false
       ], 
@@ -4147,11 +4147,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/33": [
-        "The Solo Top Beast", 
+      "http://clgaming.net/guide/y1": [
+        "I'm the best toplaner.", 
+        2, 
         0, 
-        0, 
-        "The Beast", 
+        "maultii", 
         false
       ], 
       "http://solomid.net/guides.php?g=5515": [
@@ -4168,7 +4168,7 @@
       "http://clgaming.net/guide/NE": [
         "Luck? or Skill?", 
         0, 
-        0, 
+        1, 
         "Orkalouses", 
         false
       ], 
@@ -4181,11 +4181,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/NE": [
-        "Luck? or Skill?", 
+      "http://clgaming.net/guide/ub": [
+        "Xin Zhao  In Dah Jungle", 
+        -1, 
         0, 
-        0, 
-        "Orkalouses", 
+        "Hedelma", 
         false
       ]
     }
@@ -4271,7 +4271,7 @@
       "http://solomid.net/guides.php?g=637": [
         "Your Total Malzahar Resource ~ Bow to the Void ~", 
         18, 
-        66, 
+        67, 
         "wRAthoFVuLK", 
         false
       ], 
@@ -4294,7 +4294,7 @@
       "http://solomid.net/guides.php?g=637": [
         "Your Total Malzahar Resource ~ Bow to the Void ~", 
         18, 
-        66, 
+        67, 
         "wRAthoFVuLK", 
         false
       ]
@@ -4388,7 +4388,7 @@
       "http://solomid.net/guides.php?g=720": [
         "The Queen of Blades", 
         441, 
-        187, 
+        188, 
         "Chaox", 
         true
       ], 
@@ -4415,18 +4415,18 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/aA": [
-        "rly strong irelia!", 
-        2, 
-        0, 
-        "Rainbowsarebad", 
-        false
-      ], 
       "http://solomid.net/guides.php?g=12879": [
         "Disregard Morello, Acquire Elo", 
         13, 
         0, 
         "SaucyBeast", 
+        false
+      ], 
+      "http://clgaming.net/guide/2j": [
+        "Queen of Blades", 
+        -10, 
+        0, 
+        "Multij", 
         false
       ]
     }
@@ -4820,7 +4820,7 @@
       "http://clgaming.net/guide/r9": [
         "Howdy Yall v2", 
         5, 
-        7, 
+        0, 
         "TylerJones", 
         false
       ], 
@@ -4868,11 +4868,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/y9": [
-        "Es Real", 
+      "http://clgaming.net/guide/r9": [
+        "Howdy Yall v2", 
+        5, 
         0, 
-        0, 
-        "Coenen", 
+        "TylerJones", 
         false
       ], 
       "http://solomid.net/guides.php?g=8013": [
