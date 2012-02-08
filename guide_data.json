@@ -519,7 +519,7 @@
     {
       "http://solomid.net/guides.php?g=16833": [
         "i dont take steriods i swear", 
-        77, 
+        80, 
         0, 
         "The Rain Man", 
         true
@@ -570,7 +570,7 @@
     {
       "http://solomid.net/guides.php?g=16833": [
         "i dont take steriods i swear", 
-        77, 
+        80, 
         0, 
         "The Rain Man", 
         true
@@ -644,7 +644,7 @@
       "http://solomid.net/guides.php?g=8023": [
         "Xerath, Sit (in the) Back and Profit", 
         42, 
-        68, 
+        69, 
         "Tipakee", 
         false
       ], 
@@ -802,7 +802,7 @@
       ], 
       "http://solomid.net/guides.php?g=8379": [
         "Hop Hop Revolution XXX (nerfed)", 
-        116, 
+        117, 
         21, 
         "Westrice", 
         true
@@ -1049,11 +1049,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/75": [
-        "HarderBetterFasterStronger", 
-        3, 
+      "http://clgaming.net/guide/8t": [
+        "AP Poppy", 
+        -1, 
         0, 
-        "ZioSerpe", 
+        "limewire", 
         false
       ], 
       "http://solomid.net/guides.php?g=6671": [
@@ -1263,7 +1263,7 @@
       "http://solomid.net/guides.php?g=12856": [
         "The Concept of Graves & Dominion", 
         6, 
-        0, 
+        1, 
         "RainDevour", 
         false
       ], 
@@ -1286,7 +1286,7 @@
       "http://solomid.net/guides.php?g=12856": [
         "The Concept of Graves & Dominion", 
         6, 
-        0, 
+        1, 
         "RainDevour", 
         false
       ]
@@ -1414,7 +1414,7 @@
       "http://solomid.net/guides.php?g=9352": [
         "Scorched Earth", 
         7, 
-        47, 
+        48, 
         "turboderp", 
         false
       ], 
@@ -1785,13 +1785,13 @@
       "http://solomid.net/guides.php?g=1381": [
         "A Comprehensive Guide to The Serpent Menace", 
         75, 
-        81, 
+        82, 
         "Izri", 
         false
       ], 
       "http://solomid.net/guides.php?g=15900": [
         "CASSI- OVERPOWERED -AHHH", 
-        146, 
+        147, 
         1, 
         "Reginald", 
         true
@@ -2883,14 +2883,14 @@
       ], 
       "http://solomid.net/guides.php?g=10962": [
         "Basic Jungle Phoenix Udyr Guide", 
-        135, 
+        136, 
         22, 
         "TheOddOne", 
         true
       ], 
       "http://solomid.net/guides.php?g=10616": [
         "O-DYR IT'S UDYR!", 
-        49, 
+        50, 
         76, 
         "Sycho Sid", 
         true
@@ -2912,7 +2912,7 @@
       "http://clgaming.net/guide/KD": [
         "Udyr The Beast", 
         1, 
-        0, 
+        14, 
         "Nooby Jake", 
         false
       ], 
@@ -3077,7 +3077,7 @@
       "http://solomid.net/guides.php?g=1700": [
         "One Shot. One Kill.", 
         240, 
-        33, 
+        34, 
         "Chaox", 
         true
       ]
@@ -3200,7 +3200,7 @@
       "http://solomid.net/guides.php?g=2491": [
         "Rumble in the Bronx", 
         11, 
-        23, 
+        24, 
         "Iloveasy", 
         false
       ]
@@ -3419,8 +3419,8 @@
       ], 
       "http://solomid.net/guides.php?g=3881": [
         "King of Games (Trinitykong)", 
-        62, 
-        2, 
+        65, 
+        3, 
         "turbOpun", 
         false
       ], 
@@ -3920,7 +3920,7 @@
       ], 
       "http://solomid.net/guides.php?g=9131": [
         "Support Alistar", 
-        169, 
+        170, 
         10, 
         "Xpecial", 
         true
@@ -3934,14 +3934,14 @@
       ], 
       "http://solomid.net/guides.php?g=13627": [
         "Trample the Jungle", 
-        27, 
+        28, 
         3, 
         "doo0ooooooom", 
         false
       ], 
       "http://solomid.net/guides.php?g=16452": [
         "Holy Jungle Cow", 
-        38, 
+        40, 
         0, 
         "TooLeegitToQuit", 
         true
@@ -3971,7 +3971,7 @@
       ], 
       "http://solomid.net/guides.php?g=16452": [
         "Holy Jungle Cow", 
-        38, 
+        40, 
         0, 
         "TooLeegitToQuit", 
         true
@@ -4086,7 +4086,7 @@
       "http://clgaming.net/guide/5g": [
         "Jarvan IV Solo top king", 
         3, 
-        0, 
+        30, 
         "chaosss55", 
         false
       ], 
@@ -4106,11 +4106,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/5g": [
-        "Jarvan IV Solo top king", 
-        3, 
+      "http://clgaming.net/guide/Ul": [
+        "Dragon-Prince [Solo Top Guide]", 
+        -1, 
         0, 
-        "chaosss55", 
+        "FalkirioN", 
         false
       ]
     }
@@ -4443,7 +4443,7 @@
       "http://solomid.net/guides.php?g=7846": [
         "That Soraka [Competitive & Detailed Support Soraka Guide]. 1/31/2012", 
         56, 
-        7, 
+        8, 
         "iluvpie", 
         false
       ], 
@@ -4792,11 +4792,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/LD": [
-        "GAIN ELO!", 
+      "http://clgaming.net/guide/J5": [
+        "LeBlanc - Solo Q", 
         2, 
-        14, 
-        "mayeRmerktman", 
+        0, 
+        "FanTa", 
         false
       ], 
       "http://solomid.net/guides.php?g=12403": [
@@ -4862,7 +4862,7 @@
       "http://solomid.net/guides.php?g=8013": [
         "AP Ezreal - The Underestimated AP Carry", 
         21, 
-        19, 
+        0, 
         "Optimistic", 
         false
       ]
