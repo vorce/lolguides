@@ -350,11 +350,15 @@ def solomid_getGuides(url):
     retry = True
     while retry:
         try:
-            page = urllib2.urlopen(url)
+            page = urllib2.urlopen(url, timeout=60)
             retry = False
         except httplib.BadStatusLine, e:
             print("Exception: {0}".format(e))
             print("Line: {0}".format(e.line))
+            print("Waiting 10 seconds, then retrying")
+            time.sleep(10) # wait 10 seconds then try again
+        except urllib2.URLError, e:
+            print("Exception: {0}".format(e))
             print("Waiting 10 seconds, then retrying")
             time.sleep(10) # wait 10 seconds then try again
 
