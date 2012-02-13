@@ -480,6 +480,8 @@ class SourceScraper(threading.Thread):
             self._outjson = 'solomid_data.json'
         elif source == 1:
             self._outjson = 'clg_data.json'
+        elif source == 3:
+            self._outjson = 'lolpro_data.json'
 
     def shutdown(self, timeout=None):
         self._finished.set()
