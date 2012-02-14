@@ -186,6 +186,9 @@ def genChampPage(cName, data):
 def getGuideHtml(guideData):
     (url, [name, rating, update, author, featured]) = guideData
 
+    if update == -1:
+        update = '?'
+
     site = url.split('/')[2]
     sicon = None # source icon
     ficon = None # featured icon
@@ -195,6 +198,8 @@ def getGuideHtml(guideData):
         sicon = '../gfx/icons/tsmlogo.png'
     elif site.find('clgaming') != -1:
         sicon = '../gfx/icons/clglogo.png'
+    elif site.find('lolpro') != -1:
+        sicon = '../gfx/icons/curselogo.png'
 
     if featured:
         ficon = '../gfx/icons/featured.png'

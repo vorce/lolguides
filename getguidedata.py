@@ -10,6 +10,7 @@ import json
 import time
 import httplib
 import threading, signal
+import lolpro
 
 champion_url = 'http://na.leagueoflegends.com/champions'
 
@@ -551,7 +552,9 @@ def getGuidesForAllChamps(champs):
         clgNewGuide = solomid_filterNewest(clgGuides)
         #print(clgNewGuide)
 
-        guideMap[c] = [dict(solomidTopGuides.items() + clgTopGuides.items()), dict(solomidNewGuide.items() + clgNewGuide.items())]
+        (ltop, lnew) = lolpro.getGuideData(c)
+
+        guideMap[c] = [dict(solomidTopGuides.items() + clgTopGuides.items() + ltop.items()), dict(solomidNewGuide.items() + clgNewGuide.items() + ltop.items())]
         time.sleep(0.01) # no need to DoS their servers ffs.
 
     return guideMap
