@@ -274,7 +274,19 @@ CLG, Riot, Online gaming, DOTA, MOBA"/>')
     fp.write('<title>Lolguides - League of Legends guides</title>\n')
 
     fp.write('<meta name="author" content="lolguides.net">\n')
-   
+  
+    fp.write('<!-- flattr -->\n')
+    fp.write('<script type="text/javascript">\n')
+    fp.write('/* <![CDATA[ */\n')
+    fp.write('(function() {\n')
+    fp.write('var s = document.createElement(\'script\'), t = document.getElementsByTagName(\'script\')[0];\n')
+    fp.write('s.type = \'text/javascript\';\n')
+    fp.write('s.async = true;\n')
+    fp.write('s.src = \'http://api.flattr.com/js/0.6/load.js?mode=auto\';\n')
+    fp.write('t.parentNode.insertBefore(s, t);\n')
+    fp.write('})();\n')
+    fp.write('/* ]]> */</script>\n\n')
+
     fp.write('<!-- google analytics -->\n')
     fp.write('<script type="text/javascript">\n \
   var _gaq = _gaq || []; \
@@ -409,7 +421,7 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('behavior: \'all\'\n')
     fp.write('}\n')
     fp.write('}).render().setUser(\'Lolguidesnet\').start();\n')
-    fp.write('</script>\n')
+    fp.write('</script>\n\n')
 
     fp.write('<br />\n')
 
@@ -424,7 +436,7 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('</script>\n')
     fp.write('<script type="text/javascript"\n')
     fp.write('src="http://pagead2.googlesyndication.com/pagead/show_ads.js">\n')
-    fp.write('</script>\n')
+    fp.write('</script>\n<br />\n')
 
     # skip "news". fuck dat. go minimalz nigga
     '''fp.write('<h1>NEWS</h1>\n \
@@ -438,9 +450,14 @@ s.parentNode.insertBefore(po, s);\n\
     '''
 
     fp.write('<!-- g+ page -->\n')
-    fp.write('<g:plus href="https://plus.google.com/111118564432197584206" size="badge"></g:plus>\n')
+    fp.write('<g:plus href="https://plus.google.com/111118564432197584206" size="badge"></g:plus>\n<br />\n')
 
-    fp.write('</div>\n</div>\n')
+    fp.write('<!-- flattr button -->\n')
+    fp.write('<a class="FlattrButton" style="display:none;" href="http://lolguides.net"></a>\n')
+    fp.write('<noscript><a href="http://flattr.com/thing/506833/Lolguides-net" target="_blank">\n')
+    fp.write('<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"/></a></noscript>\n')
+
+    fp.write('\n</div>\n</div>\n')
 
     fp.write('<hr />\n')
 

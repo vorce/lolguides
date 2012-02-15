@@ -1054,7 +1054,7 @@
       "http://solomid.net/guides.php?g=1552": [
         "Command: Carry", 
         31, 
-        6, 
+        7, 
         "Rilaero", 
         false
       ], 
@@ -1929,11 +1929,11 @@
         "TheTrueYako", 
         false
       ], 
-      "http://clgaming.net/guide/4D": [
-        "Fizzination", 
-        1, 
-        21, 
-        "DirtySouth69", 
+      "http://clgaming.net/guide/ux": [
+        "Insert title!", 
+        -5, 
+        0, 
+        "KeePoUt23", 
         false
       ], 
       "http://www.lolpro.com/guides/fizz/125-fizz-mid-lane": [
@@ -4094,18 +4094,18 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/et": [
-        "Skarner Jungle! AUSPEC", 
-        -3, 
-        0, 
-        "Mayo", 
-        false
-      ], 
       "http://www.lolpro.com/guides/skarner/77-skarner-jungle": [
         "Skarner - Jungle", 
         0, 
         -1, 
         "Hashinshin", 
+        false
+      ], 
+      "http://clgaming.net/guide/G6": [
+        "[SUPBRO] Jungle Skarner", 
+        5, 
+        0, 
+        "Minabuse", 
         false
       ], 
       "http://solomid.net/guides.php?g=6622": [
@@ -4301,7 +4301,7 @@
       ], 
       "http://solomid.net/guides.php?g=3881": [
         "King of Games (Trinitykong)", 
-        71, 
+        72, 
         2, 
         "turbOpun", 
         false
@@ -4310,7 +4310,7 @@
     {
       "http://solomid.net/guides.php?g=3881": [
         "King of Games (Trinitykong)", 
-        71, 
+        72, 
         2, 
         "turbOpun", 
         false
@@ -4928,7 +4928,7 @@
     {
       "http://solomid.net/guides.php?g=9131": [
         "Support Alistar", 
-        172, 
+        171, 
         17, 
         "Xpecial", 
         true
@@ -4949,7 +4949,7 @@
       ], 
       "http://solomid.net/guides.php?g=16452": [
         "Holy Jungle Cow", 
-        59, 
+        60, 
         0, 
         "TooLeegitToQuit", 
         true
@@ -4986,7 +4986,7 @@
     {
       "http://solomid.net/guides.php?g=16452": [
         "Holy Jungle Cow", 
-        59, 
+        60, 
         0, 
         "TooLeegitToQuit", 
         true
