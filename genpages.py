@@ -161,7 +161,7 @@ def genChampPage(cName, data):
 
     fp.write('</div>\n<div class="span3">\n')
 
-    fp.write('<br /><br /><p>&nbsp;</p>\n')
+    fp.write('<h1> </h1><br /><br /><p>&nbsp;</p>\n')
 
     fp.write('          <script type="text/javascript"><!--\n')
     fp.write('google_ad_client = "ca-pub-0220560223746642";\n')

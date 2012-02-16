@@ -237,7 +237,7 @@ clgChamps = {
 'Karthus': 23,
 'Sion': 11,
 'Alistar': 1,
-'Leblanc': 63,
+'LeBlanc': 63,
 'Ezreal': 47,
 'Fiddlesticks': 4,
 'Kog\'Maw': 54,
@@ -296,7 +296,8 @@ clgChamps = {
 'Ahri':89,
 'Viktor':90,
 'Sejuani':91,
-'Ziggs':92
+'Ziggs':92,
+'Nautilus':93
 }
 
 def dumpJSON(dataz):
