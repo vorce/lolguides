@@ -3,7 +3,7 @@
     {
       "http://solomid.net/guides.php?g=10154": [
         "I Play Jax", 
-        167, 
+        168, 
         23, 
         "Dyrus", 
         true
@@ -169,7 +169,7 @@
       ], 
       "http://solomid.net/guides.php?g=2954": [
         "Stop Banning Shaco, I Want Free Wins", 
-        154, 
+        155, 
         4, 
         "rbdrumline", 
         false
@@ -199,7 +199,7 @@
       ], 
       "http://solomid.net/guides.php?g=2954": [
         "Stop Banning Shaco, I Want Free Wins", 
-        154, 
+        155, 
         4, 
         "rbdrumline", 
         false
@@ -225,13 +225,13 @@
       "http://solomid.net/guides.php?g=2164": [
         "Lanewick v2", 
         113, 
-        4, 
+        5, 
         "The Rain Man", 
         true
       ], 
       "http://solomid.net/guides.php?g=2727": [
         "A Beast about The Lane (CDRWICK)", 
-        224, 
+        225, 
         41, 
         "FYA Umashi", 
         true
@@ -262,7 +262,7 @@
       "http://solomid.net/guides.php?g=2164": [
         "Lanewick v2", 
         113, 
-        4, 
+        5, 
         "The Rain Man", 
         true
       ], 
@@ -277,26 +277,12 @@
   ], 
   "Nidalee": [
     {
-      "http://solomid.net/guides.php?g=8437": [
-        "Your Guide To The AD COOGA", 
-        16, 
-        3, 
-        "CasualBanana", 
+      "http://clgaming.net/guide/o3": [
+        "ApTop#1", 
+        4, 
+        60, 
+        "mankiii", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=9121": [
-        "Nidalee got nerfed? Oh wait.. (Tanky DPS)", 
-        40, 
-        62, 
-        "Mikwenz", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=13827": [
-        "True Top Terror by Bischu (AP, AD, Hybrid)", 
-        62, 
-        16, 
-        "Marionette030", 
-        true
       ], 
       "http://www.lolpro.com/guides/nidalee/104-nidalee-top-lane": [
         "Nidalee - Top Lane", 
@@ -311,21 +297,14 @@
         30, 
         "moutoons", 
         false
-      ], 
-      "http://clgaming.net/guide/o3": [
-        "ApTop#1", 
-        4, 
-        60, 
-        "mankiii", 
-        false
       ]
     }, 
     {
-      "http://solomid.net/guides.php?g=8437": [
-        "Your Guide To The AD COOGA", 
-        16, 
-        3, 
-        "CasualBanana", 
+      "http://clgaming.net/guide/bx": [
+        "Here mousy mousy mousy", 
+        0, 
+        0, 
+        "pacific", 
         false
       ], 
       "http://www.lolpro.com/guides/nidalee/104-nidalee-top-lane": [
@@ -333,13 +312,6 @@
         1, 
         -1, 
         "DontMashMe", 
-        false
-      ], 
-      "http://clgaming.net/guide/bx": [
-        "Here mousy mousy mousy", 
-        0, 
-        0, 
-        "pacific", 
         false
       ]
     }
@@ -349,7 +321,7 @@
       "http://clgaming.net/guide/iH": [
         "KILL IT WITH FIRE!", 
         1, 
-        2, 
+        3, 
         "Tiridus", 
         false
       ], 
@@ -360,26 +332,12 @@
         "Crs Elementz", 
         false
       ], 
-      "http://solomid.net/guides.php?g=11140": [
-        "The Burning Vengeance", 
-        17, 
-        57, 
-        "Lynch", 
-        false
-      ], 
       "http://clgaming.net/guide/1n": [
         "Fourth Degree", 
         18, 
         30, 
         "360caboose", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=2587": [
-        "Brandginald", 
-        263, 
-        34, 
-        "Reginald", 
-        true
       ]
     }, 
     {
@@ -396,13 +354,6 @@
         0, 
         "skrpn", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=2587": [
-        "Brandginald", 
-        263, 
-        34, 
-        "Reginald", 
-        true
       ]
     }
   ], 
@@ -591,7 +542,7 @@
       "http://solomid.net/guides.php?g=5379": [
         "All You Need to Know About Anivia", 
         17, 
-        41, 
+        42, 
         "brokenglasses", 
         false
       ], 
@@ -667,7 +618,7 @@
       "http://solomid.net/guides.php?g=231": [
         "This'll be a slaughter.", 
         28, 
-        76, 
+        77, 
         "PureCarnage", 
         false
       ], 
@@ -729,7 +680,7 @@
       "http://solomid.net/guides.php?g=8323": [
         "She looks stunning... Wait, how ambiguous! (In-depth guide to Support Leona)", 
         36, 
-        2, 
+        3, 
         "disteL", 
         false
       ], 
@@ -759,7 +710,7 @@
       "http://solomid.net/guides.php?g=8323": [
         "She looks stunning... Wait, how ambiguous! (In-depth guide to Support Leona)", 
         36, 
-        2, 
+        3, 
         "disteL", 
         false
       ], 
@@ -978,7 +929,7 @@
       "http://solomid.net/guides.php?g=13096": [
         "A Sivir-ly Disturbing Guide", 
         57, 
-        43, 
+        44, 
         "FYA Umashi", 
         true
       ]
@@ -1032,7 +983,7 @@
       ], 
       "http://solomid.net/guides.php?g=8809": [
         "No one's getting out alive (v2.0)", 
-        13, 
+        14, 
         78, 
         "Esthaniel", 
         false
@@ -1060,7 +1011,7 @@
       ], 
       "http://solomid.net/guides.php?g=8379": [
         "Hop Hop Revolution XXX (nerfed)", 
-        131, 
+        132, 
         33, 
         "Westrice", 
         true
@@ -1102,7 +1053,7 @@
       "http://solomid.net/guides.php?g=3774": [
         "BALLZ TO YOU (High Elo in Depth Guide)", 
         125, 
-        9, 
+        10, 
         "SkiLLY", 
         true
       ], 
@@ -1137,7 +1088,7 @@
       "http://solomid.net/guides.php?g=4503": [
         "Going Balls Deep", 
         15, 
-        189, 
+        190, 
         "LesserMouseDeer", 
         true
       ]
@@ -1160,7 +1111,7 @@
       "http://solomid.net/guides.php?g=3774": [
         "BALLZ TO YOU (High Elo in Depth Guide)", 
         125, 
-        9, 
+        10, 
         "SkiLLY", 
         true
       ]
@@ -1170,7 +1121,7 @@
     {
       "http://solomid.net/guides.php?g=11903": [
         "Ate an orange and everything was K. Dying? NOPE Chuck Testa. How to play top lane Gangplank for Dummies", 
-        212, 
+        213, 
         49, 
         "Dyrus", 
         true
@@ -1481,7 +1432,7 @@
       "http://solomid.net/guides.php?g=6": [
         "Jungle Nunu Guide", 
         249, 
-        6, 
+        7, 
         "TheOddOne", 
         true
       ], 
@@ -1518,7 +1469,7 @@
       "http://solomid.net/guides.php?g=6": [
         "Jungle Nunu Guide", 
         249, 
-        6, 
+        7, 
         "TheOddOne", 
         true
       ]
@@ -1571,7 +1522,7 @@
       "http://solomid.net/guides.php?g=4518": [
         "A comprehensive guide with focus on counter jungling", 
         75, 
-        7, 
+        8, 
         "Avelice", 
         false
       ], 
@@ -1594,7 +1545,7 @@
       "http://solomid.net/guides.php?g=4518": [
         "A comprehensive guide with focus on counter jungling", 
         75, 
-        7, 
+        8, 
         "Avelice", 
         false
       ], 
@@ -1653,18 +1604,18 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/3G": [
-        "How to do a pentakill", 
-        0, 
-        0, 
-        "TermInatOr", 
-        false
-      ], 
       "http://www.lolpro.com/guides/graves/94-graves-duo-bot": [
         "Graves - Duo Bot", 
         1, 
         -1, 
         "Cop", 
+        false
+      ], 
+      "http://clgaming.net/guide/G7": [
+        "I ain't got time to bleed", 
+        1, 
+        0, 
+        "friendcomp", 
         false
       ], 
       "http://solomid.net/guides.php?g=12856": [
@@ -1688,7 +1639,7 @@
       "http://solomid.net/guides.php?g=809": [
         "Nocturne Jungle Guide", 
         239, 
-        297, 
+        298, 
         "TheOddOne", 
         true
       ], 
@@ -1771,7 +1722,7 @@
       "http://solomid.net/guides.php?g=4008": [
         "AP Carry Lux:  Lasers From The Light Of Demacia", 
         29, 
-        2, 
+        3, 
         "Geegs30", 
         false
       ], 
@@ -1818,7 +1769,7 @@
     {
       "http://solomid.net/guides.php?g=9352": [
         "Scorched Earth", 
-        8, 
+        9, 
         59, 
         "turboderp", 
         false
@@ -1901,7 +1852,7 @@
       ], 
       "http://solomid.net/guides.php?g=15985": [
         "Gator Boots - An Updated Renekton Guide", 
-        23, 
+        21, 
         0, 
         "xRustySpoon", 
         false
@@ -1945,7 +1896,7 @@
       ], 
       "http://solomid.net/guides.php?g=15985": [
         "Gator Boots - An Updated Renekton Guide", 
-        23, 
+        21, 
         0, 
         "xRustySpoon", 
         false
@@ -1971,7 +1922,7 @@
       "http://solomid.net/guides.php?g=10316": [
         "Fizz in my Pants", 
         69, 
-        93, 
+        94, 
         "FYA Umashi", 
         true
       ], 
@@ -2023,11 +1974,11 @@
   ], 
   "Kassadin": [
     {
-      "http://solomid.net/guides.php?g=8832": [
-        "How to dominate SOLOMID ...revamped", 
-        7, 
-        9, 
-        "Alabababa", 
+      "http://clgaming.net/guide/rh": [
+        "Void into your Soul", 
+        6, 
+        0, 
+        "V3N0M LA", 
         false
       ], 
       "http://clgaming.net/guide/S3": [
@@ -2037,32 +1988,11 @@
         "gunslingerrs", 
         false
       ], 
-      "http://solomid.net/guides.php?g=97": [
-        "The Other Super Anti-Carry", 
-        249, 
-        69, 
-        "Elhehir", 
-        true
-      ], 
-      "http://clgaming.net/guide/rh": [
-        "Void into your Soul", 
-        6, 
-        0, 
-        "V3N0M LA", 
-        false
-      ], 
       "http://www.lolpro.com/guides/kassadin/131-kassadin-mid-lane": [
         "Kassadin - Mid Lane", 
         1, 
         -1, 
         "voyboy", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=10044": [
-        "The Void Walker", 
-        33, 
-        30, 
-        "Lynch", 
         false
       ]
     }, 
@@ -2079,13 +2009,6 @@
         1, 
         -1, 
         "voyboy", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=13847": [
-        "AP Hypercarry", 
-        5, 
-        8, 
-        "Akirus", 
         false
       ]
     }
@@ -2137,7 +2060,7 @@
       "http://solomid.net/guides.php?g=17668": [
         "The Maven Of The Strings", 
         53, 
-        0, 
+        1, 
         "MissyMegan", 
         false
       ]
@@ -2146,7 +2069,7 @@
       "http://solomid.net/guides.php?g=17668": [
         "The Maven Of The Strings", 
         53, 
-        0, 
+        1, 
         "MissyMegan", 
         false
       ], 
@@ -2178,29 +2101,15 @@
       "http://clgaming.net/guide/KG": [
         "Pr0xy55's Vladimir Rape In Mid", 
         2, 
-        6, 
+        0, 
         "6AzeZ", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=1479": [
-        "Reginald's Vladimir", 
-        161, 
-        255, 
-        "Reginald", 
-        true
       ], 
       "http://www.lolpro.com/guides/vladimir/71-vladimir-top-lane": [
         "Vladimir - Top Lane", 
         0, 
         -1, 
         "SYDTKO", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=13381": [
-        "Classic Solo Lane Vladimir", 
-        37, 
-        2, 
-        "Lacksadaisy", 
         false
       ]
     }, 
@@ -2212,18 +2121,11 @@
         "SYDTKO", 
         false
       ], 
-      "http://clgaming.net/guide/CG": [
-        "Vladimir solotop !", 
+      "http://clgaming.net/guide/B7": [
+        "Now without sparkles!", 
+        -1, 
         0, 
-        0, 
-        "TermInatOr", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=13381": [
-        "Classic Solo Lane Vladimir", 
-        37, 
-        2, 
-        "Lacksadaisy", 
+        "ANDYPLOZ", 
         false
       ]
     }
@@ -2385,7 +2287,7 @@
       "http://solomid.net/guides.php?g=6644": [
         "Maokai, Jungle Tank. ", 
         105, 
-        4, 
+        0, 
         "doo0ooooooom", 
         false
       ], 
@@ -2398,7 +2300,7 @@
       ], 
       "http://solomid.net/guides.php?g=11784": [
         "Maokai IS the Jungle", 
-        312, 
+        314, 
         0, 
         "TheOddOne", 
         true
@@ -2421,7 +2323,7 @@
       ], 
       "http://solomid.net/guides.php?g=11784": [
         "Maokai IS the Jungle", 
-        312, 
+        314, 
         0, 
         "TheOddOne", 
         true
@@ -2557,7 +2459,7 @@
       "http://solomid.net/guides.php?g=550": [
         "Ultimate Olaf Guide", 
         219, 
-        326, 
+        327, 
         "TheOddOne", 
         true
       ], 
@@ -2612,7 +2514,7 @@
       "http://solomid.net/guides.php?g=17000": [
         "Ziggplosions", 
         55, 
-        8, 
+        9, 
         "Xpecial", 
         true
       ], 
@@ -2674,14 +2576,14 @@
       "http://solomid.net/guides.php?g=6152": [
         "First I'm a carry, then I'm a support! (Edited to include new Masteries/Summoners)", 
         14, 
-        54, 
+        55, 
         "CrAzY MoFo 13", 
         false
       ], 
       "http://solomid.net/guides.php?g=7791": [
         "The AoE Pain Train of Mr. Lane", 
         51, 
-        95, 
+        96, 
         "FYA Umashi", 
         false
       ]
@@ -2704,7 +2606,7 @@
       "http://solomid.net/guides.php?g=6152": [
         "First I'm a carry, then I'm a support! (Edited to include new Masteries/Summoners)", 
         14, 
-        54, 
+        55, 
         "CrAzY MoFo 13", 
         false
       ]
@@ -2743,7 +2645,7 @@
       "http://solomid.net/guides.php?g=4": [
         "Twisted Treeline Annie", 
         76, 
-        358, 
+        359, 
         "TheOddOne", 
         true
       ], 
@@ -2797,8 +2699,8 @@
       ], 
       "http://solomid.net/guides.php?g=10075": [
         "A Light Among The Shadows", 
-        28, 
-        7, 
+        29, 
+        8, 
         "PhoenixKami", 
         false
       ], 
@@ -2826,7 +2728,7 @@
       "http://solomid.net/guides.php?g=10819": [
         "One Sexy Pubstomper (re-release)", 
         13, 
-        86, 
+        87, 
         "Esthaniel", 
         false
       ]
@@ -2848,8 +2750,8 @@
       ], 
       "http://solomid.net/guides.php?g=10075": [
         "A Light Among The Shadows", 
-        28, 
-        7, 
+        29, 
+        8, 
         "PhoenixKami", 
         false
       ]
@@ -2880,7 +2782,7 @@
       ], 
       "http://solomid.net/guides.php?g=12403": [
         "LEbonkers", 
-        117, 
+        118, 
         62, 
         "Reginald", 
         true
@@ -2895,7 +2797,7 @@
       "http://solomid.net/guides.php?g=6259": [
         "Leblanc, The Decisively Sexy Magician", 
         47, 
-        72, 
+        73, 
         "Shiftrider", 
         true
       ]
@@ -2910,7 +2812,7 @@
       ], 
       "http://solomid.net/guides.php?g=12403": [
         "LEbonkers", 
-        117, 
+        118, 
         62, 
         "Reginald", 
         true
@@ -2971,14 +2873,14 @@
       "http://solomid.net/guides.php?g=2762": [
         "Feasting in the Jungle", 
         20, 
-        26, 
+        27, 
         "PingZaid", 
         false
       ], 
       "http://solomid.net/guides.php?g=1787": [
         "Iron Cho", 
         57, 
-        244, 
+        245, 
         "The Rain Man", 
         true
       ]
@@ -2987,7 +2889,7 @@
       "http://solomid.net/guides.php?g=2762": [
         "Feasting in the Jungle", 
         20, 
-        26, 
+        27, 
         "PingZaid", 
         false
       ], 
@@ -3108,7 +3010,7 @@
       ], 
       "http://solomid.net/guides.php?g=18030": [
         "From the Shadows of the Jungle", 
-        12, 
+        13, 
         1, 
         "TooLeegitToQuit", 
         true
@@ -3152,7 +3054,7 @@
       ], 
       "http://solomid.net/guides.php?g=18030": [
         "From the Shadows of the Jungle", 
-        12, 
+        13, 
         1, 
         "TooLeegitToQuit", 
         true
@@ -3191,7 +3093,7 @@
       ], 
       "http://www.lolpro.com/guides/teemo/112-teemo-top-lane": [
         "Teemo - Top Lane", 
-        1, 
+        2, 
         -1, 
         "Pobelter", 
         false
@@ -3199,7 +3101,7 @@
       "http://solomid.net/guides.php?g=5387": [
         "Bruiser Cruiser", 
         24, 
-        50, 
+        51, 
         "Tuckinator", 
         false
       ]
@@ -3207,7 +3109,7 @@
     {
       "http://www.lolpro.com/guides/teemo/112-teemo-top-lane": [
         "Teemo - Top Lane", 
-        1, 
+        2, 
         -1, 
         "Pobelter", 
         false
@@ -3267,7 +3169,7 @@
       "http://solomid.net/guides.php?g=4393": [
         "Do not provoke him! A comperhensive Pantheon guide", 
         27, 
-        7, 
+        8, 
         "Garona", 
         false
       ], 
@@ -3287,7 +3189,7 @@
       ], 
       "http://solomid.net/guides.php?g=2325": [
         "Dytheon Middle Revamped", 
-        62, 
+        64, 
         0, 
         "Dyrus", 
         true
@@ -3324,7 +3226,7 @@
       ], 
       "http://solomid.net/guides.php?g=2325": [
         "Dytheon Middle Revamped", 
-        62, 
+        64, 
         0, 
         "Dyrus", 
         true
@@ -3357,7 +3259,7 @@
       "http://solomid.net/guides.php?g=5756": [
         "My bird is hungry", 
         28, 
-        8, 
+        9, 
         "Hi Im Paul", 
         false
       ], 
@@ -3387,7 +3289,7 @@
       "http://solomid.net/guides.php?g=5756": [
         "My bird is hungry", 
         28, 
-        8, 
+        9, 
         "Hi Im Paul", 
         false
       ]
@@ -3456,7 +3358,7 @@
       "http://clgaming.net/guide/8G": [
         "AP Sion mid", 
         0, 
-        0, 
+        7, 
         "TermInatOr", 
         false
       ]
@@ -3481,7 +3383,7 @@
       "http://solomid.net/guides.php?g=3001": [
         "The Night Hunter", 
         108, 
-        214, 
+        215, 
         "Westrice", 
         true
       ], 
@@ -3557,7 +3459,7 @@
       "http://solomid.net/guides.php?g=9133": [
         "Nasus is too mainstream", 
         7, 
-        10, 
+        11, 
         "Seronoth", 
         false
       ], 
@@ -3571,7 +3473,7 @@
       "http://solomid.net/guides.php?g=8292": [
         "Judge, Jury, and Executioner", 
         92, 
-        95, 
+        96, 
         "FYA Umashi", 
         true
       ], 
@@ -3626,7 +3528,7 @@
       "http://solomid.net/guides.php?g=14133": [
         "The Jungler of Doom.", 
         12, 
-        3, 
+        4, 
         "geeca", 
         false
       ], 
@@ -3674,18 +3576,18 @@
         "Tekshi", 
         true
       ], 
+      "http://clgaming.net/guide/w0": [
+        "Fiddle in da Jungle", 
+        1, 
+        0, 
+        "NSNboredforever", 
+        false
+      ], 
       "http://www.lolpro.com/guides/fiddlesticks/92-fiddlesticks-jungle": [
         "Fiddlesticks - Jungle", 
         2, 
         -1, 
         "LiQuiD112", 
-        false
-      ], 
-      "http://clgaming.net/guide/Tx": [
-        "The ultimate jungler", 
-        5, 
-        0, 
-        "Carisiak", 
         false
       ]
     }
@@ -3813,7 +3715,7 @@
       "http://solomid.net/guides.php?g=5858": [
         "Not All Demons are Bad", 
         10, 
-        80, 
+        81, 
         "LadyKitsune", 
         false
       ], 
@@ -3836,7 +3738,7 @@
       "http://clgaming.net/guide/5G": [
         "Let's engage this teamfight", 
         0, 
-        0, 
+        7, 
         "TermInatOr", 
         false
       ], 
@@ -3944,7 +3846,7 @@
       "http://solomid.net/guides.php?g=11992": [
         "Who Dares Wins", 
         9, 
-        7, 
+        8, 
         "turboderp", 
         false
       ]
@@ -3953,7 +3855,7 @@
       "http://solomid.net/guides.php?g=11992": [
         "Who Dares Wins", 
         9, 
-        7, 
+        8, 
         "turboderp", 
         false
       ], 
@@ -4157,7 +4059,7 @@
       "http://solomid.net/guides.php?g=8046": [
         "Jungle Skarner - The Battle Approaches", 
         26, 
-        69, 
+        70, 
         "Shotgun Heavy", 
         false
       ], 
@@ -4191,8 +4093,8 @@
       ], 
       "http://solomid.net/guides.php?g=13232": [
         "The Sting of the Jungle", 
-        175, 
-        57, 
+        176, 
+        58, 
         "TheOddOne", 
         true
       ]
@@ -4267,7 +4169,7 @@
       ], 
       "http://solomid.net/guides.php?g=13987": [
         "HAAAYAAA! An in-depth guide for solo-top Kennen.", 
-        13, 
+        14, 
         5, 
         "Shouf", 
         false
@@ -4306,6 +4208,27 @@
   ], 
   "Urgot": [
     {
+      "http://solomid.net/guides.php?g=12465": [
+        "Neo True Damage Spell Vamp Urgot: A Comprehensive Guide", 
+        6, 
+        8, 
+        "ShinerCCC", 
+        false
+      ], 
+      "http://solomid.net/guides.php?g=578": [
+        "Urgot Feet Stink From Kicking Too Much Ass", 
+        77, 
+        317, 
+        "BruiseLeet", 
+        true
+      ], 
+      "http://solomid.net/guides.php?g=14386": [
+        "X-45 Firestalker? Check out my Acidstalker.", 
+        23, 
+        38, 
+        "FYA Umashi", 
+        true
+      ], 
       "http://clgaming.net/guide/Ng": [
         "The Ugly Ranged AD Carry", 
         6, 
@@ -4322,6 +4245,13 @@
       ]
     }, 
     {
+      "http://solomid.net/guides.php?g=12465": [
+        "Neo True Damage Spell Vamp Urgot: A Comprehensive Guide", 
+        6, 
+        8, 
+        "ShinerCCC", 
+        false
+      ], 
       "http://clgaming.net/guide/Ng": [
         "The Ugly Ranged AD Carry", 
         6, 
@@ -4377,7 +4307,7 @@
       ], 
       "http://solomid.net/guides.php?g=3881": [
         "King of Games (Trinitykong)", 
-        81, 
+        82, 
         7, 
         "turbOpun", 
         false
@@ -4709,7 +4639,7 @@
       "http://solomid.net/guides.php?g=7397": [
         "The Grandmasters Singed Manual", 
         224, 
-        40, 
+        41, 
         "Dyrus", 
         true
       ], 
@@ -4746,7 +4676,7 @@
       "http://solomid.net/guides.php?g=7397": [
         "The Grandmasters Singed Manual", 
         224, 
-        40, 
+        41, 
         "Dyrus", 
         true
       ]
@@ -4770,7 +4700,7 @@
       ], 
       "http://solomid.net/guides.php?g=12156": [
         "The King of Trash", 
-        8, 
+        9, 
         1, 
         "CLASSIC RIGBY", 
         false
@@ -4807,7 +4737,7 @@
       ], 
       "http://solomid.net/guides.php?g=12156": [
         "The King of Trash", 
-        8, 
+        9, 
         1, 
         "CLASSIC RIGBY", 
         false
@@ -4867,13 +4797,6 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/4G": [
-        "Kog'Maw AD Carry", 
-        -1, 
-        0, 
-        "TermInatOr", 
-        false
-      ], 
       "http://solomid.net/guides.php?g=11435": [
         "The Icathian Surprise", 
         20, 
@@ -4886,6 +4809,13 @@
         1, 
         -1, 
         "SYDTKO", 
+        false
+      ], 
+      "http://clgaming.net/guide/fj": [
+        "DA #1 AD BEAST (new masteries)", 
+        3, 
+        0, 
+        "anglelee", 
         false
       ]
     }
@@ -4909,7 +4839,7 @@
       "http://clgaming.net/guide/C7": [
         "Baby round right me spin you.", 
         0, 
-        0, 
+        21, 
         "AMonkeyCourier", 
         false
       ], 
@@ -4929,18 +4859,18 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/C7": [
-        "Baby round right me spin you.", 
-        0, 
-        0, 
-        "AMonkeyCourier", 
-        false
-      ], 
       "http://www.lolpro.com/guides/garen/93-garen-top-lane": [
         "Garen - Top Lane", 
         0, 
         -1, 
         "Doublelift", 
+        false
+      ], 
+      "http://clgaming.net/guide/9u": [
+        "No place like DEMACIAAA", 
+        -3, 
+        0, 
+        "Aziansensation", 
         false
       ], 
       "http://solomid.net/guides.php?g=9898": [
@@ -5278,26 +5208,12 @@
         "Doublelift", 
         false
       ], 
-      "http://solomid.net/guides.php?g=6846": [
-        "King of Blades", 
-        68, 
-        148, 
-        "Westrice", 
-        true
-      ], 
       "http://clgaming.net/guide/33": [
         "The Solo Top Beast", 
         0, 
         60, 
         "The Beast", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=5515": [
-        "The Sharp Claw of the Beast (Updated, Roam Talon)", 
-        268, 
-        76, 
-        "FYA Umashi", 
-        true
       ]
     }, 
     {
@@ -5314,13 +5230,6 @@
         0, 
         "Kantos123", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=5515": [
-        "The Sharp Claw of the Beast (Updated, Roam Talon)", 
-        268, 
-        76, 
-        "FYA Umashi", 
-        true
       ]
     }
   ], 
@@ -5491,20 +5400,6 @@
   ], 
   "Tristana": [
     {
-      "http://clgaming.net/guide/IA": [
-        "I wanna shoot something", 
-        1, 
-        30, 
-        "SHENGKEEBAKERY1", 
-        false
-      ], 
-      "http://solomid.net/guides.php?g=7224": [
-        "Pocket Rockets", 
-        96, 
-        144, 
-        "Chaox", 
-        true
-      ], 
       "http://www.lolpro.com/guides/tristana/152-tristana-duo-bot": [
         "Tristana - Duo Bot", 
         3, 
@@ -5512,11 +5407,11 @@
         "Cop", 
         false
       ], 
-      "http://solomid.net/guides.php?g=8299": [
-        "Leap Frog! - An In Depth Trist Guide", 
+      "http://clgaming.net/guide/IA": [
+        "I wanna shoot something", 
         1, 
-        90, 
-        "Teddy", 
+        30, 
+        "SHENGKEEBAKERY1", 
         false
       ], 
       "http://clgaming.net/guide/uj": [
@@ -5525,27 +5420,6 @@
         0, 
         "Dracky", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=2091": [
-        "Is that a rocket in your pocket? ", 
-        219, 
-        76, 
-        "Candy Panda", 
-        true
-      ], 
-      "http://solomid.net/guides.php?g=10407": [
-        "Pocket Rockets v3", 
-        143, 
-        25, 
-        "Chaox", 
-        true
-      ], 
-      "http://solomid.net/guides.php?g=7": [
-        "The Misunderstood Carry", 
-        111, 
-        356, 
-        "Locodoco", 
-        true
       ]
     }, 
     {
@@ -5562,13 +5436,6 @@
         0, 
         "DeferoN", 
         false
-      ], 
-      "http://solomid.net/guides.php?g=10407": [
-        "Pocket Rockets v3", 
-        143, 
-        25, 
-        "Chaox", 
-        true
       ]
     }
   ], 
@@ -5688,7 +5555,7 @@
       "http://solomid.net/guides.php?g=11191": [
         "Support Soraka", 
         85, 
-        83, 
+        84, 
         "Xpecial", 
         true
       ], 
@@ -5726,6 +5593,13 @@
   ], 
   "Veigar": [
     {
+      "http://solomid.net/guides.php?g=7327": [
+        "The Evil Yordle", 
+        14, 
+        69, 
+        "Damonexos", 
+        false
+      ], 
       "http://clgaming.net/guide/B9": [
         "White Mage Veigar", 
         0, 
@@ -5746,6 +5620,13 @@
         -1, 
         "Nyjacky", 
         false
+      ], 
+      "http://solomid.net/guides.php?g=8021": [
+        "Pro tip: When playing against a fed Veigar, stack more AP to burst him down faster", 
+        23, 
+        6, 
+        "SMDiaDORKable", 
+        false
       ]
     }, 
     {
@@ -5759,8 +5640,15 @@
       "http://clgaming.net/guide/BG": [
         "OS by a miniball !", 
         0, 
-        0, 
+        7, 
         "TermInatOr", 
+        false
+      ], 
+      "http://solomid.net/guides.php?g=7628": [
+        "Serve me, and you won't suffer! Hehehe!", 
+        -2, 
+        0, 
+        "A2ZOMG", 
         false
       ]
     }
@@ -5776,7 +5664,7 @@
       ], 
       "http://solomid.net/guides.php?g=17635": [
         "New Queen Support", 
-        26, 
+        25, 
         1, 
         "Havax", 
         true
@@ -5873,7 +5761,7 @@
       "http://clgaming.net/guide/uG": [
         "No trinity needed (I think) XD", 
         0, 
-        0, 
+        6, 
         "ralkeon", 
         false
       ], 
@@ -5886,11 +5774,11 @@
       ]
     }, 
     {
-      "http://clgaming.net/guide/uG": [
-        "No trinity needed (I think) XD", 
+      "http://clgaming.net/guide/2z": [
+        "Evelynn [by Judge Reinhold]", 
+        1, 
         0, 
-        0, 
-        "ralkeon", 
+        "Ninaran", 
         false
       ], 
       "http://solomid.net/guides.php?g=7232": [
@@ -5935,7 +5823,7 @@
       "http://solomid.net/guides.php?g=6576": [
         "Learn how to get PENTAKILLS!", 
         153, 
-        46, 
+        47, 
         "Reginald", 
         true
       ]
@@ -5958,7 +5846,7 @@
       "http://solomid.net/guides.php?g=6576": [
         "Learn how to get PENTAKILLS!", 
         153, 
-        46, 
+        47, 
         "Reginald", 
         true
       ]
@@ -6072,7 +5960,7 @@
       "http://solomid.net/guides.php?g=838": [
         "Ezreal terror", 
         125, 
-        276, 
+        277, 
         "Chauster", 
         true
       ], 
@@ -6100,7 +5988,7 @@
       "http://solomid.net/guides.php?g=6882": [
         "Who needs a map?", 
         75, 
-        96, 
+        97, 
         "copp", 
         true
       ], 
