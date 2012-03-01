@@ -107,6 +107,8 @@ riotChamps = {
 # viktor
 # sejuani
 # ziggs
+# nautilus
+# fiora
 }
 
 clgChampsClean = {
@@ -297,7 +299,8 @@ clgChamps = {
 'Viktor':90,
 'Sejuani':91,
 'Ziggs':92,
-'Nautilus':93
+'Nautilus':93,
+'Fiora':94
 }
 
 def dumpJSON(dataz):
