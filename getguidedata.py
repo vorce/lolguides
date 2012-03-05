@@ -353,19 +353,27 @@ def getChampName(info):
 
 def solomid_getGuides(url):
     retry = True
+    skip = False
+
     while retry:
         try:
             page = urllib2.urlopen(url, timeout=60)
             retry = False
-        except httplib.BadStatusLine, e:
-            print("Exception: {0}".format(e))
-            print("Line: {0}".format(e.line))
-            print("Waiting 10 seconds, then retrying")
-            time.sleep(10) # wait 10 seconds then try again
+        except urllib2.HTTPError, e:
+            if e.code == 404 or e.code == 403:
+                retry = False
+                skip = True
+            else:
+                print("Exception: {0}".format(e))
+                print("Waiting 10 seconds, then retrying")
+                time.sleep(10) # wait 10 seconds then try again
         except urllib2.URLError, e:
             print("Exception: {0}".format(e))
             print("Waiting 10 seconds, then retrying")
             time.sleep(10) # wait 10 seconds then try again
+
+    if skip:
+        return {}
 
     soup = BeautifulSoup(page)
     guideList = soup.findAll(name="div", attrs={"class":["title", "rating", "author"]})
@@ -475,7 +483,7 @@ def solomid_getRating(guide):
 
 class SourceScraper(threading.Thread):
     def __init__(self, champs, source):
-        threading.Thread.__init__(self, name='Lolguides.net source scraper')
+        threading.Thread.__init__(self, name='Lolguides scraper, source {0}'.format(source))
         self._finished = threading.Event()
         signal.signal(signal.SIGINT, signal.SIG_DFL)
         self._champs = champs
@@ -485,7 +493,7 @@ class SourceScraper(threading.Thread):
             self._outjson = 'solomid_data.json'
         elif source == 1:
             self._outjson = 'clg_data.json'
-        elif source == 3:
+        elif source == 2:
             self._outjson = 'lolpro_data.json'
 
     def shutdown(self, timeout=None):
@@ -498,6 +506,8 @@ class SourceScraper(threading.Thread):
         guideMap = {}
 
         for c in self._champs:
+            print("{0}: Getting guide data for {1}".format(self.getName(), c))
+
             if self._source == 0:
                 solomidUrl = 'http://solomid.net/guides.php?champ={0}'.format(c)
                 solomidGuides = solomid_getGuides(solomidUrl)
@@ -506,19 +516,37 @@ class SourceScraper(threading.Thread):
 
                 #print('----------------------')
                 solomidNewGuide = solomid_filterNewest(solomidGuides)
+                guideMap[c] = [solomidTopGuides, solomidNewGuide]
+
             elif self._source == 1:
-                clgUrl = 'http://www.clgaming.net/guides/?championID={0}'.format(champs[c])
+                clgUrl = 'http://www.clgaming.net/guides/?championID={0}'.format(self._champs[c])
                 clgGuides = clg_getGuides(clgUrl)
                 clgTopGuides = solomid_filterTop(clgGuides)
                 clgNewGuide = solomid_filterNewest(clgGuides)
+                guideMap[c] = [clgTopGuides, clgNewGuide]
+            
+            elif self._source == 2:
+                (ltop, lnew) = lolpro.getGuideData(c)
+                guideMap[c] = [ltop, lnew]
 
-    def dumpJSON(dataz):
+        self.dumpJSON(guideMap)
+        print("{0}: Done, wrote {1}".format(self.getName(), self._outjson))
+
+    def dumpJSON(self, dataz):
         fp = open(self._outjson, 'w')
         json_out = json.dumps(dataz, indent=2)
         fp.write(json_out)
         fp.close()
 
         
+def getGuideData(champs):
+    tsmscraper = SourceScraper(champs, 0)
+    clgscraper = SourceScraper(champs, 1)
+    lolproscraper = SourceScraper(champs, 2)
+
+    tsmscraper.start()
+    clgscraper.start()
+    lolproscraper.start()
 
 def getGuidesForAllChamps(champs):
     #tsmscraper = SourceScraper(champs, 0)
@@ -528,6 +556,10 @@ def getGuidesForAllChamps(champs):
     # 2. get guides from clgaming
 
     guideMap = {} # ChampName : [{url:[name, rating, updated, author], url2:[n, r, u, a]}, {url:[n, r, u, a]}] first dict in list is top, second contains newest
+    
+    lolProMap = {}
+    clgMap = {}
+    solomidMap = {}
 
     for c in champs:
         print("Getting guide data for: {0}".format(c))
@@ -558,10 +590,14 @@ def getGuidesForAllChamps(champs):
 
         (ltop, lnew) = lolpro.getGuideData(c)
 
-        guideMap[c] = [dict(solomidTopGuides.items() + clgTopGuides.items() + ltop.items()), dict(solomidNewGuide.items() + clgNewGuide.items() + ltop.items())]
+        lolproMap[c] = [ltop, lnew]
+        clgMap[c] = [clgTopGuides, clgNewGuide]
+        solomidMap[c] = [solomidTopGuides, solomidNewGuide]
+
+        guideMap[c] = [dict(solomidTopGuides.items() + clgTopGuides.items() + ltop.items()), dict(solomidNewGuide.items() + clgNewGuide.items() + lnew.items())]
         time.sleep(0.01) # no need to DoS their servers ffs.
 
-    return guideMap
+    return guideMap #(lolproMap, clgMap, solomidMap)
 
 # SO SLOW LOLZ - Y U CREATE AND COMPILE DA SAME REGEXP ALL TIEM?
 def clg_getUpdateDays(exp, update):
@@ -591,27 +627,31 @@ def clg_getUpdateDays(exp, update):
     return days
 
 def clg_getGuides(url):
-    retry = True
     page = None
 
-    #while retry:
-    #    try:
-    #        page = urllib2.urlopen(url)
-    #        retry = False
-    #    except httplib.HTTPError, e:
-    #        print("Exception: {0}".format(e))
-    #        print("Line: {0}".format(e.line))
-    #        print("Waiting 10 seconds, then retrying")
-    #        time.sleep(10) # wait 10 seconds then try again
+    retry = True
+    skip = False
 
-    #page = urllib2.urlopen(url)
-    try:
-        page = urllib2.urlopen(url)
-    except urllib2.HTTPError, e:
-        print e.code
-    except urllib2.URLError, e:
-        print e.args
-    
+    while retry:
+        try:
+            page = urllib2.urlopen(url, timeout=60)
+            retry = False
+        except urllib2.HTTPError, e:
+            if e.code == 404 or e.code == 403:
+                retry = False
+                skip = True
+            else:
+                print("Exception: {0}".format(e))
+                print("Waiting 10 seconds, then retrying")
+                time.sleep(10) # wait 10 seconds then try again
+        except urllib2.URLError, e:
+            print("Exception: {0}".format(e))
+            print("Waiting 10 seconds, then retrying")
+            time.sleep(10) # wait 10 seconds then try again
+
+    if skip:
+        return {}
+
     soup = BeautifulSoup(page)
     tableData = soup("td")
 
@@ -671,6 +711,8 @@ if __name__ == '__main__':
     #                  attrs={"class" : ["lol_champion", "champion_name"]})
     #champions = makeChampMap(champData)
 
-    dataz = getGuidesForAllChamps(clgChamps)
-    dumpJSON(dataz) 
+    #dataz = getGuidesForAllChamps(clgChamps)
+    #dumpJSON(dataz) 
+
+    getGuideData(clgChamps)
 

@@ -17,6 +17,19 @@ htmlStyle = '<style type="text/css">\n \
 #htmlMeta = <meta name="description" content="Champion guides for League of Legends"/>
 #<meta name="keywords" content="League of Legends, LoL, Guides, Champion guides, Builds, Items, Skills, Clgaming, Solomid, TSM, CLG, Riot"/>
 
+def loadJSONs():
+    lolproDump = loadJSON('lolpro_data.json')
+    clgDump = loadJSON('clg_data.json')
+    tsmDump = loadJSON('solomid_data.json')
+    jsonDump = {}
+
+    for i in lolproDump:
+        jsonDump[i] = [dict(lolproDump[i][0].items() + clgDump[i][0].items() + tsmDump[i][0].items()),
+                       dict(lolproDump[i][1].items() + clgDump[i][1].items() + tsmDump[i][1].items())]
+
+    #print jsonDump
+    return jsonDump
+
 def loadJSON(filename):
     fp = open(filename, 'r')
     pr = fp.read()
@@ -492,7 +505,7 @@ def champUrl(c):
     return url
 
 if __name__ == '__main__':
-    dataz = loadJSON('guide_data.json')
+    dataz = loadJSONs() # ('guide_data.json')
     genAllChampPages(dataz)
     genIndex()
 
