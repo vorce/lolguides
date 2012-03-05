@@ -39,7 +39,7 @@ def loadJSON(filename):
 
 # TODO:
 # Check for champ icon. If it doesn't exist use unknown.png.
-def genChampPage(cName, data):
+def genChampPage(cName, data, notice=""):
     c = cleanName(cName)
 
     print('Creating html/champions/{0}.html'.format(c))
@@ -113,6 +113,12 @@ def genChampPage(cName, data):
     fp.write('<div class="container">\n')
     fp.write('  <div class="row">\n')
     fp.write('      <div class="span9">\n')
+
+    if notice != "":
+        fp.write('<div class="alert alert-info">\n')
+        fp.write('{0}\n'.format(notice))
+        fp.write('</div>\n')
+
     fp.write('<h1><img alt="{0}" class="champ" src="../gfx/{1}.png" /> {0}</h1>\n'.format(cName, c))
    
     fp.write('<br />\n')
@@ -234,9 +240,11 @@ def getGuideHtml(guideData):
     return guideHtml
 
 
-def genAllChampPages(data):
+def genAllChampPages(data, notice=""):
+    print("Creating champion pages with notice: {0}".format(notice))
+
     for c in data:
-        genChampPage(c, data[c])
+        genChampPage(c, data[c], notice)
 
 def makeChampMap(champs):
     champIds = []
@@ -266,8 +274,9 @@ def getChampName(info):
     champName = info.text
     return champName
 
-def genIndex():
+def genIndex(notice=""):
     print("Generating index")
+    print("With notice: {0}".format(notice))
 
     page = urllib2.urlopen('http://na.leagueoflegends.com/champions')
     soup = BeautifulSoup(page)
@@ -361,6 +370,12 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('<div class="container">\n')
     fp.write('  <div class="row">\n')
     fp.write('    <div class="span9">\n')
+
+    if notice != "":
+        fp.write('<div class="alert alert-info">\n')
+        fp.write('{0}\n'.format(notice))
+        fp.write('</div>\n')
+        
     fp.write('    	<h1>WELCOME</h1>\n')
     fp.write('        <div class="hero-unit">\n')
     

@@ -550,6 +550,10 @@ def getGuideData(champs):
     clgscraper.start()
     lolproscraper.start()
 
+    tsmscraper.join()
+    clgscraper.join()
+    lolproscraper.join()
+
 def getGuidesForAllChamps(champs):
     #tsmscraper = SourceScraper(champs, 0)
     #clgscraper = SourceScraper(champs, 1)
