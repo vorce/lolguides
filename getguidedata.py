@@ -529,6 +529,8 @@ class SourceScraper(threading.Thread):
                 (ltop, lnew) = lolpro.getGuideData(c)
                 guideMap[c] = [ltop, lnew]
 
+            time.sleep(0.01)
+
         self.dumpJSON(guideMap)
         print("{0}: Done, wrote {1}".format(self.getName(), self._outjson))
 
