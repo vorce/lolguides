@@ -36,6 +36,7 @@ def data():
 def git():
     msg = 'Automated git commit from paver'
     os.system("git commit -a -m '{0}'".format(msg))
+    os.system("git push -u origin master")
 
 @task
 def publish():
