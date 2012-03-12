@@ -1,5 +1,6 @@
 import json
 import urllib2
+import datetime
 from BeautifulSoup import BeautifulSoup
 
 htmlHeader = '<!doctype html>\n \
@@ -115,6 +116,7 @@ def genChampPage(cName, data, notice=""):
     fp.write('      <div class="span9">\n')
 
     if notice != "":
+        notice = "{0}: {1}".format(datetime.date.today().isoformat(), notice) 
         fp.write('<div class="alert alert-info">\n')
         fp.write('{0}\n'.format(notice))
         fp.write('</div>\n')
@@ -373,6 +375,7 @@ s.parentNode.insertBefore(po, s);\n\
 
     if notice != "":
         fp.write('<div class="alert alert-info">\n')
+        notice = "{0}: {1}".format(datetime.date.today().isoformat(), notice)
         fp.write('{0}\n'.format(notice))
         fp.write('</div>\n')
         
