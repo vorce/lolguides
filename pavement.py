@@ -29,8 +29,7 @@ def champs(args):
     
 @task
 def data():
-    dataz = getguidedata.getGuideData(getguidedata.clgChamps) #getGuidesForAllChamps(getguidedata.clgChamps)
-    getguidedata.dumpJSON(dataz)
+    getguidedata.getGuideData(getguidedata.clgChamps) #getGuidesForAllChamps(getguidedata.clgChamps)
 
 @task
 def git():

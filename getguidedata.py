@@ -1,6 +1,4 @@
-#
-# MONSTER NOMNONOMONOMONOMOMOMONOM!!!
-# I AM NOT SCARED [][][][]
+# 2011 - 2012 Joel Carlbark
 #
 
 from BeautifulSoup import BeautifulSoup
@@ -12,8 +10,11 @@ import httplib
 import threading, signal
 import lolpro
 
+from scrapeutils import *
+
 champion_url = 'http://na.leagueoflegends.com/champions'
 
+'''
 riotChamps = {
 'evelynn': 28,
 'nunu': 20,
@@ -205,6 +206,7 @@ clgChampsClean = {
 'sejuani':91,
 'ziggs':92
 }
+'''
 
 clgChamps = {
 'Evelynn': 22,
@@ -302,51 +304,6 @@ clgChamps = {
 'Nautilus':93,
 'Fiora':94
 }
-
-def dumpJSON(dataz):
-    fp = open('guide_data.json', 'w')
-    json_out = json.dumps(dataz, indent=2)
-    fp.write(json_out)
-    fp.close()
-
-def makeChampMap(champs):
-    champIds = []
-    champNames = []
-
-    for c in champs:
-        infoType = getattr(c, 'name', None)
-
-        if infoType == 'a':
-            champIds.append(getChampId(c))
-        elif infoType == 'div':
-            champName = getChampName(c)
-            champNames.append(champName)
-        else:
-            pass #something's terribly wrong
-
-    return dict(zip(champNames, champIds))
-
-
-def getChampId(info):
-    while getattr(info, 'name', None) != 'img':
-        info = info.next
-
-    champId = getattr(info, 'attrs', None)[0][1].split('/')[-1].split('.jpg')[0]
-    return champId
-
-def cleanName(c):
-    cleanName = c.lower()
-    cleanName = cleanName.replace('.', '')
-    cleanName = cleanName.replace("'", '')
-    cleanName = cleanName.replace(' ', '')
-    return cleanName
-
-def getChampName(info):
-    champName = info.text.lower()
-    champName = champName.replace('.', '')
-    champName = champName.replace("'", '')
-    champName = champName.replace(' ', '')
-    return champName
 
 # {url:[name, rating, updateDate]}
 # Akali : [dict1, dict2]
@@ -511,18 +468,18 @@ class SourceScraper(threading.Thread):
             if self._source == 0:
                 solomidUrl = 'http://solomid.net/guides.php?champ={0}'.format(c)
                 solomidGuides = solomid_getGuides(solomidUrl)
-                solomidTopGuides = solomid_filterTop(solomidGuides)
+                solomidTopGuides = filterTop(solomidGuides)
                 #print solomidTopGuides
 
                 #print('----------------------')
-                solomidNewGuide = solomid_filterNewest(solomidGuides)
+                solomidNewGuide = filterNewest(solomidGuides)
                 guideMap[c] = [solomidTopGuides, solomidNewGuide]
 
             elif self._source == 1:
                 clgUrl = 'http://www.clgaming.net/guides/?championID={0}'.format(self._champs[c])
                 clgGuides = clg_getGuides(clgUrl)
-                clgTopGuides = solomid_filterTop(clgGuides)
-                clgNewGuide = solomid_filterNewest(clgGuides)
+                clgTopGuides = filterTop(clgGuides)
+                clgNewGuide = filterNewest(clgGuides)
                 guideMap[c] = [clgTopGuides, clgNewGuide]
             
             elif self._source == 2:
@@ -554,58 +511,7 @@ def getGuideData(champs):
     clgscraper.join()
     lolproscraper.join()
 
-def getGuidesForAllChamps(champs):
-    #tsmscraper = SourceScraper(champs, 0)
-    #clgscraper = SourceScraper(champs, 1)
-
-    # 1. get guides from solomid
-    # 2. get guides from clgaming
-
-    guideMap = {} # ChampName : [{url:[name, rating, updated, author], url2:[n, r, u, a]}, {url:[n, r, u, a]}] first dict in list is top, second contains newest
-    
-    lolProMap = {}
-    clgMap = {}
-    solomidMap = {}
-
-    for c in champs:
-        print("Getting guide data for: {0}".format(c))
-        cClean = cleanName(c)
-
-        #print('----------------------')
-        solomidUrl = 'http://solomid.net/guides.php?champ={0}'.format(c)
-        solomidGuides = solomid_getGuides(solomidUrl)
-        #print(solomidGuides)
-
-        #print('----------------------')
-        solomidTopGuides = solomid_filterTop(solomidGuides)
-        #print solomidTopGuides
-
-        #print('----------------------')
-        solomidNewGuide = solomid_filterNewest(solomidGuides)
-
-
-        clgUrl = 'http://www.clgaming.net/guides/?championID={0}'.format(champs[c])
-        clgGuides = clg_getGuides(clgUrl)
-
-        clgTopGuides = solomid_filterTop(clgGuides)
-        #print(clgTopGuides)
-
-        #print('----------------------')
-        clgNewGuide = solomid_filterNewest(clgGuides)
-        #print(clgNewGuide)
-
-        (ltop, lnew) = lolpro.getGuideData(c)
-
-        lolproMap[c] = [ltop, lnew]
-        clgMap[c] = [clgTopGuides, clgNewGuide]
-        solomidMap[c] = [solomidTopGuides, solomidNewGuide]
-
-        guideMap[c] = [dict(solomidTopGuides.items() + clgTopGuides.items() + ltop.items()), dict(solomidNewGuide.items() + clgNewGuide.items() + lnew.items())]
-        time.sleep(0.01) # no need to DoS their servers ffs.
-
-    return guideMap #(lolproMap, clgMap, solomidMap)
-
-# SO SLOW LOLZ - Y U CREATE AND COMPILE DA SAME REGEXP ALL TIEM?
+# Fixme: Don't compile the same regex all the time heh.
 def clg_getUpdateDays(exp, update):
     update = update.replace(',', '')
 
@@ -710,15 +616,5 @@ def clg_getGuides(url):
     return dict(zip(urls, guideInfo))
 
 if __name__ == '__main__':
-    # 1. Create champ:id map from leagueoflegends.com/champions
-    #page = urllib2.urlopen(champion_url)
-    #soup = BeautifulSoup(page)
-    #champData = soup.findAll(name=["div", "a"],
-    #                  attrs={"class" : ["lol_champion", "champion_name"]})
-    #champions = makeChampMap(champData)
-
-    #dataz = getGuidesForAllChamps(clgChamps)
-    #dumpJSON(dataz) 
-
     getGuideData(clgChamps)
 

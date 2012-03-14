@@ -3,6 +3,7 @@ def cleanName(c):
     cleanName = cleanName.replace('.', '')
     cleanName = cleanName.replace("'", '')
     cleanName = cleanName.replace(' ', '')
+    cleanName = cleanName.lower()
     return cleanName
 
 # slooow

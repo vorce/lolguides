@@ -3,6 +3,8 @@ import urllib2
 import datetime
 from BeautifulSoup import BeautifulSoup
 
+from scrapeutils import *
+
 htmlHeader = '<!doctype html>\n \
 <html lang="en">\n \
 <head>\n\n \
@@ -505,13 +507,6 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('</body>\n</html>\n')
 
     fp.close()
-
-def cleanName(c):
-    n = c.replace(' ', '')
-    n = n.replace("'", '')
-    n = n.replace('.', '')
-    n = n.lower()
-    return n
 
 def champUrl(c):
     url = c.replace(' ', '')
