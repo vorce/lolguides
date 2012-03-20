@@ -1,3 +1,5 @@
+import urllib2
+
 def cleanName(c):
     cleanName = c.lower()
     cleanName = cleanName.replace('.', '')
@@ -60,4 +62,28 @@ def filterNewest(guides):
         guidesIncluded = guidesIncluded + 1
 
     return newGuides
+
+def getPage(url):
+    page = None
+    retry = True
+    skip = False
+
+    while retry:
+        try:
+            page = urllib2.urlopen(url, timeout=60)
+            retry = False
+        except urllib2.HTTPError, e:
+            if e.code == 404 or e.code == 403:
+                retry = False
+                skip = True
+            else:
+                print("Exception: {0}".format(e))
+                print("Waiting 10 seconds, then retrying")
+                time.sleep(10) # wait 10 seconds then try again
+        except urllib2.URLError, e:
+            print("Exception: {0}".format(e))
+            print("Waiting 10 seconds, then retrying")
+            time.sleep(10) # wait 10 seconds then try again
+
+    return (page, skip)
 
