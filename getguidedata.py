@@ -302,7 +302,8 @@ clgChamps = {
 'Sejuani':91,
 'Ziggs':92,
 'Nautilus':93,
-'Fiora':94
+'Fiora':94,
+'Lulu':95
 }
 
 # {url:[name, rating, updateDate]}
