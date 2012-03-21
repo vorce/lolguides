@@ -393,9 +393,10 @@ class SourceScraper(threading.Thread):
 
         for c in self._champs:
             print("{0}: Getting guide data for {1}".format(self.getName(), c))
+            cClean = cleanName(c)
 
             if self._source == 0:
-                solomidUrl = 'http://solomid.net/guides.php?champ={0}'.format(c)
+                solomidUrl = 'http://solomid.net/guides.php?champ={0}'.format(cClean)
                 solomidGuides = solomid_getGuides(solomidUrl)
                 solomidTopGuides = filterTop(solomidGuides)
                 #print solomidTopGuides
