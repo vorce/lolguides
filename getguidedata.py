@@ -8,7 +8,7 @@ import json
 import time
 import httplib
 import threading, signal
-import lolpro
+import lolpro, clg, solomid
 
 from scrapeutils import *
 
@@ -309,64 +309,6 @@ clgChamps = {
 # {url:[name, rating, updateDate]}
 # Akali : [dict1, dict2]
 
-def solomid_getGuides(url):
-    retry = True
-    page, skip = getPage(url)
-
-    if skip:
-        return {}
-
-    soup = BeautifulSoup(page)
-    guideList = soup.findAll(name="div", attrs={"class":["title", "rating", "author"]})
-    urls = []
-    names = []
-    ratings = []
-    updates = []
-    authors = []
-    featureds = [] # It's a word.
-
-    for g in guideList:
-        infoType = getattr(g, 'attrs', None)
-        
-        if infoType[0][1] == 'title':
-            (url, name, update, featured) = solomid_getUrlNameUpdate(g)
-            urls.append(url)
-            names.append(name)
-            featureds.append(featured)
-            updates.append(update)
-        elif infoType[0][1] == 'rating':
-            rating = solomid_getRating(g)
-            ratings.append(rating)
-        elif infoType[0][1] == 'author':
-            author = solomid_getAuthor(g)
-            authors.append(author)
-        else:
-            pass # something terrible has happened!!
-    
-    namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
-    return dict(zip(urls, namesRatingsUpdates))
-
-def solomid_getUrlNameUpdate(guide):
-    urlAndName = guide.find("a")
-    url = 'http://solomid.net/{0}'.format(getattr(urlAndName, 'attrs', None)[0][1])
-    name = getattr(urlAndName, 'attrs', None)[1][1]
-    update = int(getattr(guide, 'text', None).split(' ')[-3])
-    featured = (guide.span.text == 'FEATURED')
-
-    return (url, name, update, featured)
-
-def solomid_getAuthor(guide):
-    authorA = guide.find("a")
-    author = authorA.text
-    return author
-
-def solomid_getRating(guide):
-    rating = guide.findAll("span", attrs={"class":["green", "red"]})
-    likes = int(rating[0].text)
-    dislikes = int(rating[1].text)
-
-    return (likes-dislikes)
-
 class SourceScraper(threading.Thread):
     def __init__(self, champs, source):
         threading.Thread.__init__(self, name='Lolguides scraper, source {0}'.format(source))
@@ -397,7 +339,7 @@ class SourceScraper(threading.Thread):
 
             if self._source == 0:
                 solomidUrl = 'http://solomid.net/guides.php?champ={0}'.format(cClean)
-                solomidGuides = solomid_getGuides(solomidUrl)
+                solomidGuides = solomid.getGuides(solomidUrl)
                 solomidTopGuides = filterTop(solomidGuides)
                 #print solomidTopGuides
 
@@ -407,7 +349,7 @@ class SourceScraper(threading.Thread):
 
             elif self._source == 1:
                 clgUrl = 'http://www.clgaming.net/guides/?championID={0}'.format(self._champs[c])
-                clgGuides = clg_getGuides(clgUrl)
+                clgGuides = clg.getGuides(clgUrl)
                 clgTopGuides = filterTop(clgGuides)
                 clgNewGuide = filterNewest(clgGuides)
                 guideMap[c] = [clgTopGuides, clgNewGuide]
@@ -440,91 +382,6 @@ def getGuideData(champs):
     tsmscraper.join()
     clgscraper.join()
     lolproscraper.join()
-
-# Fixme: Don't compile the same regex all the time heh.
-def clg_getUpdateDays(exp, update):
-    update = update.replace(',', '')
-
-    m = exp.match(update)
-    #print(reg)
-    #print("in: " + update)
-
-    days = 0
-
-    if m != None:
-        mg = m.groups()
-
-        if mg[1].startswith('day'):
-            days = int(mg[0])
-        elif mg[1].startswith('week'):
-            days = int(mg[0])*7
-        elif mg[1].startswith('month'):
-            days = int(mg[0])*30
-        elif mg[1].startswith('year'):
-            days = int(mg[0])*365
-    else:
-        pass # something awful in da dataz
-
-    #print("days: " + str(days))
-    return days
-
-def clg_getGuides(url):
-    page = None
-    page, skip = getPage(url)
-
-    if skip:
-        return {}
-
-    soup = BeautifulSoup(page)
-    tableData = soup("td")
-
-    periods = '(years|year|months|month|weeks|week|days|day|hours|hour|minutes|minute|seconds|second)'
-
-    reg = '^updated (\\d+) ' + periods + ' (\\d+) ' + periods + ' ago'
-    exp = re.compile(reg)
-
-    urls = []
-    names = []
-    ratings = []
-    updates = []
-    authors = []
-    featureds = []
-
-    i = 0
-    # print(tableData[1:-12])
-    while i < len(tableData[1:-12])-1:
-        td = tableData[1:-12][i]
-        td2 = tableData[1:-12][i+1]
-
-        urlEnd = getattr(td.a, 'attrs', None)[1][1]
-        url = 'http://clgaming.net{0}'.format(urlEnd)
-        urls.append(url)
-
-        name = td.a.text
-        names.append(name)
-
-        rating = td.span.text
-        if rating.lower() == 'featured':
-            featureds.append(True)
-            rating = td.findAll("span")[1].text
-        else:
-            featureds.append(False)
-
-        rating = int(rating)
-
-        ratings.append(rating)
-
-        author = td.findAll("a")[1].text
-        authors.append(author)
-
-        update = td2.findAll("div")[1].text
-        updateDays = clg_getUpdateDays(exp, update)
-        updates.append(updateDays)
-
-        i = i + 3; # voodoo
-
-    guideInfo = zip(names, ratings, updates, authors, featureds)
-    return dict(zip(urls, guideInfo))
 
 if __name__ == '__main__':
     getGuideData(clgChamps)
