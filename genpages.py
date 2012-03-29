@@ -5,6 +5,106 @@ from BeautifulSoup import BeautifulSoup
 
 from scrapeutils import *
 
+# map for championselect.net, sigh :-)
+csMap = {
+    'ahri':2,
+    'akali':5,
+    'alistar':6,
+    'amumu':7,
+    'anivia':8,
+    'annie':9,
+    'ashe':10,
+    'blitzcrank':11,
+    'brand':12,
+    'caitlyn':13,
+    'cassiopeia':14,
+    'chogath':15,
+    'corki':16,
+    'drmundo':17,
+    'evelynn':18,
+    'ezreal':19,
+    'fiddlesticks':20,
+    'fiora':97,
+    'fizz':21,
+    'galio':22,
+    'gangplank':23,
+    'garen':24,
+    'gragas':25,
+    'graves':26,
+    'heimerdinger':27,
+    'irelia':28,
+    'janna':29,
+    'jarvaniv':30,
+    'jax':31,
+    'karma':32,
+    'karthus':33,
+    'kassadin':34,
+    'katarina':35,
+    'kayle':36,
+    'kennen':37,
+    'kogmaw':38,
+    'leblanc':39,
+    'leesin':40,
+    'leona':41,
+    'lulu':98,
+    'lux':42,
+    'malphite':43,
+    'malzahar':44,
+    'maokai':45,
+    'masteryi':46,
+    'missfortune':47,
+    'mordekaiser':48,
+    'morgana':49,
+    'nasus':50,
+    'nautilus':96,
+    'nidalee':51,
+    'nocturne':52,
+    'nunu':53,
+    'olaf':54,
+    'orianna':55,
+    'pantheon':56,
+    'poppy':57,
+    'rammus':58,
+    'renekton':59,
+    'riven':60,
+    'rumble':61,
+    'ryze':62,
+    'sejuani':63,
+    'shaco':64,
+    'shen':65,
+    'shyvana':66,
+    'singed':67,
+    'sion':68,
+    'sivir':69,
+    'skarner':70,
+    'sona':71,
+    'soraka':72,
+    'swain':73,
+    'talon':74,
+    'taric':75,
+    'teemo':76,
+    'tristana':77,
+    'trundle':78,
+    'tryndamere':79,
+    'twistedfate':80,
+    'twitch':81,
+    'udyr':82,
+    'urgot':83,
+    'vayne':84,
+    'veigar':85,
+    'viktor':86,
+    'vladimir':87,
+    'volibear':88,
+    'warwick':89,
+    'wukong':90,
+    'xerath':91,
+    'xinzhao':92,
+    'yorick':93,
+    'ziggs':94,
+    'zilean':95
+}
+csUrl = 'http://www.championselect.net/index.php?r=champions/view&id={0}'
+
 htmlHeader = '<!doctype html>\n \
 <html lang="en">\n \
 <head>\n\n \
@@ -126,7 +226,11 @@ def genChampPage(cName, data, notice=""):
     fp.write('<h1><img alt="{0}" class="champ" src="../gfx/{1}.png" /> {0}</h1>\n'.format(cName, c))
    
     fp.write('<br />\n')
-    fp.write('<a href="http://soloqueue.com/#{0}">Champion details @ soloqueue.com</a>\n'.format(cName))
+
+    csChampUrl = csUrl.format(csMap[c])
+
+    fp.write('<a href="{0}">Champion details @ ChampionSelect</a>\n'.format(csChampUrl))
+    #fp.write('<a href="http://soloqueue.com/#{0}">Champion details @ soloqueue.com</a>\n'.format(cName))
     fp.write('<br />\n\n')
 
     fp.write('<div class="hero-unit">\n')
