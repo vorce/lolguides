@@ -62,5 +62,5 @@ def getRating(guide):
     likes = int(rating[0].text)
     dislikes = int(rating[1].text)
 
-    return (likes-dislikes)
+    return confidence_fixed(likes, dislikes)
 
