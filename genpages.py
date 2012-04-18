@@ -32,6 +32,7 @@ csMap = {
     'gragas':25,
     'graves':26,
     'heimerdinger':27,
+    'hecarim':99,
     'irelia':28,
     'janna':29,
     'jarvaniv':30,
