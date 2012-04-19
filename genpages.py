@@ -125,14 +125,22 @@ def loadJSONs():
     lolproDump = loadJSON('lolpro_data.json')
     clgDump = loadJSON('clg_data.json')
     tsmDump = loadJSON('solomid_data.json')
-    jsonDump = {}
 
-    for i in lolproDump:
-        jsonDump[i] = [dict(lolproDump[i][0].items() + clgDump[i][0].items() + tsmDump[i][0].items()),
-                       dict(lolproDump[i][1].items() + clgDump[i][1].items() + tsmDump[i][1].items())]
+    return concatJSONDumps(lolproDump, tsmDump, clgDump) 
 
-    #print jsonDump
-    return jsonDump
+def concatJSONDumps(lp, tsm, clg):
+    cd = {}
+    for c in lp:
+        lp_c = lp.get(c, [{}, {}])
+        tsm_c = tsm.get(c, [{}, {}])
+        clg_c = clg.get(c, [{}, {}])
+
+        cd[c] = [dict(lp_c[0].items() + clg_c[0].items() +
+                      tsm_c[0].items()),
+                 dict(lp_c[1].items() + clg_c[1].items() +
+                      tsm_c[1].items())]
+    return cd
+
 
 def loadJSON(filename):
     fp = open(filename, 'r')
