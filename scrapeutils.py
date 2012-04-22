@@ -1,5 +1,12 @@
 import urllib2
 
+def csName(c):
+    csn = c
+    csn = csn.replace(' ', '-')
+    csn = csn.replace("'", '')
+    csn = csn.replace('.', '')
+    return csn
+
 def cleanName(c):
     cleanName = c.lower()
     cleanName = cleanName.replace('.', '')

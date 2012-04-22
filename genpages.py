@@ -6,7 +6,7 @@ from BeautifulSoup import BeautifulSoup
 from scrapeutils import *
 
 # map for championselect.net, sigh :-)
-csMap = {
+'''csMap = {
     'ahri':2,
     'akali':5,
     'alistar':6,
@@ -103,8 +103,8 @@ csMap = {
     'yorick':93,
     'ziggs':94,
     'zilean':95
-}
-csUrl = 'http://www.championselect.net/index.php?r=champions/view&id={0}'
+}'''
+csUrl = 'http://www.championselect.net/champ/{0}'
 
 htmlHeader = '<!doctype html>\n \
 <html lang="en">\n \
@@ -236,7 +236,8 @@ def genChampPage(cName, data, notice=""):
    
     fp.write('<br />\n')
 
-    csChampUrl = csUrl.format(csMap[c])
+    csn = csName(cName)
+    csChampUrl = csUrl.format(csn)
 
     fp.write('<a href="{0}">Champion details @ ChampionSelect</a>\n'.format(csChampUrl))
     #fp.write('<a href="http://soloqueue.com/#{0}">Champion details @ soloqueue.com</a>\n'.format(cName))
