@@ -103,5 +103,5 @@ def confidence_fixed(ups, downs):
     n = ups + downs
     z = 1.64485 #1.0 = 85%, 1.6 = 95%
     phat = float(ups) / n
-    return (phat+z*z/(2*n)-z*math.sqrt((phat*(1-phat)+z*z/(4*n))/n))/(1+z*z/n)
+    return int(((phat+z*z/(2*n)-z*math.sqrt((phat*(1-phat)+z*z/(4*n))/n))/(1+z*z/n))*100)
 
