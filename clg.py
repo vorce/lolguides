@@ -2,75 +2,36 @@ from BeautifulSoup import BeautifulSoup
 import urllib2
 import httplib
 import time
+import re
 
 from scrapeutils import *
 
-def getGuides(url):
-    page = None
-    page, skip = getPage(url)
+def getUrlNameFeatured(g):
+    urlAndTitle = g.find(name="div", attrs={"class":["clg-guideTitle"]})
 
-    if skip:
-        return {}
+    urlEnd = getattr(urlAndTitle.a, 'attrs', None)[0][1]
+    url = 'http://clgaming.net{0}'.format(urlEnd)
 
-    soup = BeautifulSoup(page)
-    tableData = soup("td")
+    title = urlAndTitle.a.text
+    f = False
+    if urlAndTitle.span != None:
+        f = True
 
-    periods = '(years|year|months|month|weeks|week|days|day|hours|hour|minutes|minute|seconds|second)'
+    return (url, title, f)
 
-    reg = '^updated (\\d+) ' + periods + ' (\\d+) ' + periods + ' ago'
-    exp = re.compile(reg)
+def getAuthorRating(g):
+    everything = g.find(name="div", attrs={"class":["clg-guideMeta"]})
 
-    urls = []
-    names = []
-    ratings = []
-    updates = []
-    authors = []
-    featureds = []
+    author = everything.a.text
+    rating = int(g.findAll("div")[1].text.split(" ")[0])
 
-    i = 0
-    # print(tableData[1:-12])
-    while i < len(tableData[1:-12])-1:
-        td = tableData[1:-12][i]
-        td2 = tableData[1:-12][i+1]
+    return (author, rating)
 
-        urlEnd = getattr(td.a, 'attrs', None)[1][1]
-        url = 'http://clgaming.net{0}'.format(urlEnd)
-        urls.append(url)
+def getUpdate(g, exp):
+    upd = g.find(name="div", attrs={"class":["clg-guideDate"]}).text
+    upd = upd.replace(',', '')
 
-        name = td.a.text
-        names.append(name)
-
-        rating = td.span.text
-        if rating.lower() == 'featured':
-            featureds.append(True)
-            rating = td.findAll("span")[1].text
-        else:
-            featureds.append(False)
-
-        rating = int(rating)
-
-        ratings.append(rating)
-
-        author = td.findAll("a")[1].text
-        authors.append(author)
-
-        update = td2.findAll("div")[1].text
-        updateDays = getUpdateDays(exp, update)
-        updates.append(updateDays)
-
-        i = i + 3; # voodoo
-
-    guideInfo = zip(names, ratings, updates, authors, featureds)
-    return dict(zip(urls, guideInfo))
-
-
-# Fixme: Don't compile the same regex all the time heh.
-def getUpdateDays(exp, update):
-    update = update.replace(',', '')
-
-    m = exp.match(update)
-    #print(reg)
-    #print("in: " + update)
+    m = exp.match(upd)
 
     days = 0
 
@@ -88,5 +49,42 @@ def getUpdateDays(exp, update):
     else:
         pass # something awful in da dataz
 
-    #print("days: " + str(days))
     return days
+
+def getGuides(url):
+    page = None
+    page, skip = getPage(url)
+
+    if skip:
+        return {}
+
+    soup = BeautifulSoup(page)
+    guideList = soup.findAll(name="li", attrs={"class":["clg-guideItem"]})
+
+    periods = '(years|year|months|month|weeks|week|days|day|hours|hour|minutes|minute|seconds|second)'
+
+    reg = '^updated (\\d+) ' + periods + ' (\\d+) ' + periods + ' ago'
+    exp = re.compile(reg)
+
+    urls = []
+    names = []
+    ratings = []
+    updates = []
+    authors = []
+    featureds = []
+
+    for g in guideList:
+        (url, name, featured) = getUrlNameFeatured(g)
+        (author, rating) = getAuthorRating(g)
+        update = getUpdate(g, exp)
+
+        urls.append(url)
+        names.append(name)
+        featureds.append(featured)
+        updates.append(update)
+        authors.append(author)
+        ratings.append(rating)
+
+    guideInfo = zip(names, ratings, updates, authors, featureds)
+    return dict(zip(urls, guideInfo))
+

@@ -349,7 +349,7 @@ class SourceScraper(threading.Thread):
                 guideMap[c] = [solomidTopGuides, solomidNewGuide]
 
             elif self._source == 1:
-                clgUrl = 'http://www.clgaming.net/guides/?championID={0}'.format(self._champs[c])
+                clgUrl = 'http://www.clgaming.net/guides/?champion={0}'.format(self._champs[c])
                 clgGuides = clg.getGuides(clgUrl)
                 clgTopGuides = filterTop(clgGuides)
                 clgNewGuide = filterNewest(clgGuides)
