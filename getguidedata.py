@@ -304,7 +304,8 @@ clgChamps = {
 'Nautilus':93,
 'Fiora':94,
 'Lulu':95,
-'Hecarim':96
+'Hecarim':96,
+'Varus':97
 }
 
 # {url:[name, rating, updateDate]}
