@@ -63,7 +63,7 @@ def getGuides(url):
 
     periods = '(years|year|months|month|weeks|week|days|day|hours|hour|minutes|minute|seconds|second)'
 
-    reg = '^updated (\\d+) ' + periods + ' (\\d+) ' + periods + ' ago'
+    reg = '^(\\d+) ' + periods + ' ago'
     exp = re.compile(reg)
 
     urls = []
