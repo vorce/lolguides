@@ -1,4 +1,4 @@
-from BeautifulSoup import BeautifulSoup
+rom BeautifulSoup import BeautifulSoup
 import urllib2
 import httplib
 import time
