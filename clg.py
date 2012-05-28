@@ -1,4 +1,4 @@
-rom BeautifulSoup import BeautifulSoup
+from BeautifulSoup import BeautifulSoup
 import urllib2
 import httplib
 import time
@@ -10,7 +10,7 @@ def getUrlNameFeatured(g):
     urlAndTitle = g.find(name="div", attrs={"class":["clg-guideTitle"]})
 
     urlEnd = getattr(urlAndTitle.a, 'attrs', None)[0][1]
-    url = 'http://clgaming.net{0}'.format(urlEnd)
+    url = 'http://clgaming.net{0}'.format(urlEnd.encode('utf-8'))
 
     title = urlAndTitle.a.text
     f = False

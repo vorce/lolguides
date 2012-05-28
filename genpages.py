@@ -355,7 +355,7 @@ def getGuideHtml(guideData):
     guideHtml += '<span class="norm">days ago</span></td>\n'
     guideHtml += '<td class="guide-icon"><a href="{6}"><img class="icon" src="{7}" alt="{8}" /></a></td>\n'
     guideHtml += '</tr>\n</table>\n</div> <!-- well -->\n\n'
-    guideHtml = guideHtml.format(url, name.encode('utf-8'), rating, ficon, author.encode('utf-8'), update, siteurl, sicon, site)
+    guideHtml = guideHtml.format(url.encode('utf-8'), name.encode('utf-8'), rating, ficon, author.encode('utf-8'), update, siteurl, sicon, site)
     return guideHtml
 
 
