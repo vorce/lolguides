@@ -171,7 +171,7 @@ def genChampPage(cName, data, notice=""):
     fp.write('<meta name="keywords" content="{0}"/>'.format(metaKeywords))
     
     fp.write('<link rel="shortcut icon" href="../gfx/favicon.ico" type="image/x-icon" />')
-    fp.write('<title>{0} @ Lolguides</title>\n'.format(cName))
+    fp.write('<title>{0} Guides | Lolguides</title>\n'.format(cName))
 
     fp.write('<meta name="author" content="lolguides.net">\n')
 
