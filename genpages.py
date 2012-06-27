@@ -402,7 +402,7 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('        <div class="hero-unit">\n')
     
     fp.write('<p>LoLguides list only the top rated ')
-    fp.write('and newest League of Legends champion guides from clgaming, solomid and curse\'s lolpro. ')
+    fp.write('and newest <a href="http://signup.leagueoflegends.com/?ref=4c1bb89e3f98e">League of Legends</a> champion guides from clgaming, solomid and curse\'s lolpro. ')
     fp.write('Don\'t waste your time wading through pages of ')
     fp.write('out dated or low quality guides - let us filter ')
     fp.write('those out for you.</p>\n</div>\n\n')
