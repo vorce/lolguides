@@ -13,7 +13,10 @@ def getGuides(url):
         return {}
 
     soup = BeautifulSoup(page)
-    guideList = soup.findAll(name="div", attrs={"class":["title", "rating", "author"]})
+    guideList = soup.findAll(name="li", attrs={"class":
+                            ["grey-border p10 bg pos-rel"]})
+    #name="div", attrs={"class":["title", "rating", "author"]})
+
     urls = []
     names = []
     ratings = []
@@ -22,7 +25,7 @@ def getGuides(url):
     featureds = [] # It's a word.
 
     for g in guideList:
-        infoType = getattr(g, 'attrs', None)
+        '''infoType = getattr(g, 'attrs', None)
         
         if infoType[0][1] == 'title':
             (url, name, update, featured) = getUrlNameUpdate(g)
@@ -38,29 +41,63 @@ def getGuides(url):
             authors.append(author)
         else:
             pass # something terrible has happened!!
+        '''
+        url = getUrl(g)
+        urls.append(url)
+
+        name = getName(g)
+        names.append(name)
+
+        update = getUpdate(g)
+        updates.append(update)
+
+        f = getFeatured(g)
+        featureds.append(f)
+
+        r = getRating(g)
+        ratings.append(r)
+
+        author = getAuthor(g)
+        authors.append(author)
     
     namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
     return dict(zip(urls, namesRatingsUpdates))
 
 
-def getUrlNameUpdate(guide):
-    urlAndName = guide.find("a")
-    url = 'http://solomid.net/{0}'.format(getattr(urlAndName, 'attrs', None)[0][1])
-    name = getattr(urlAndName, 'attrs', None)[1][1]
-    update = int(getattr(guide, 'text', None).split(' ')[-3])
-    featured = (guide.span.text == 'FEATURED')
+def getUrl(guide):
+    return getattr(guide.a, 'attrs', None)[1][1]
 
-    return (url, name, update, featured)
+def getName(guide):
+    return guide.find(name="td", attrs={"class": ["guide-title bold tooltip"]}).text.encode('utf-8')
+
+def getUpdate(guide):
+    text = guide.find(name="td", attrs={"class": ["grey text-left last-updated"]}).text.split(' ')
+    try:
+        upd = int(text[3])
+    except ValueError:
+        upd = 0
+
+    metric = text[4]
+
+    if metric.startswith('week'):
+        upd = upd * 7
+    elif metric.startswith('month'):
+        upd = upd * 30
+    elif metric.startswith('year'):
+        upd = upd * 365
+
+    return upd 
+
+def getFeatured(guide):
+    p = guide.find(name="td", attrs={"class": ["blue"]}).text
+    return (p == 'Pro Guide' or p == 'Featured Guide')
 
 def getAuthor(guide):
-    authorA = guide.find("a")
-    author = authorA.text
-    return author
+    return guide.find(name="td", attrs={"class": ["bold text-center"]}).text.encode('utf-8')
 
 def getRating(guide):
-    rating = guide.findAll("span", attrs={"class":["green", "red"]})
-    likes = int(rating[0].text)
-    dislikes = int(rating[1].text)
-
-    return confidence_fixed(likes, dislikes)
+    s = guide.find(name="span")
+    like = getattr(s, 'attrs', None)[0][1].split(':')[1][:-1]
+    return int(float(like))
+    #return confidence_fixed(likes, dislikes)
 
