@@ -27,7 +27,7 @@ def filterTop(guides):
 
     for g in guides:
         [name, rating, update, author, featured] = guides[g]
-        if featured:
+        if featured and update < 365:
             featuredGuides[g] = guides[g]
 
     guidesIncluded = 0
@@ -38,7 +38,7 @@ def filterTop(guides):
         for g in guides:
             [name, rating, update, author, featured] = guides[g]
             if rating > highestRating and not topGuides.has_key(g) \
-               and not featuredGuides.has_key(g):
+               and not featuredGuides.has_key(g) and update < 365:
                 highestRating = rating
                 topGuide = g
 
