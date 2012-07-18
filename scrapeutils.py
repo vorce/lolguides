@@ -1,5 +1,6 @@
 import urllib2
 import math
+import time
 
 clgChamps = {
 'Evelynn': 22,
