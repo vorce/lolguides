@@ -298,11 +298,13 @@ def genIndex(notice=""):
     print("Generating index")
     print("With notice: {0}".format(notice))
 
-    page = urllib2.urlopen('http://na.leagueoflegends.com/champions')
-    soup = BeautifulSoup(page)
-    champData = soup.findAll(name=["div", "a"],
-                      attrs={"class" : ["lol_champion", "champion_name"]})
-    champions = makeChampMap(champData)
+    # Used to get all champions from official site,
+    # seems to not be updated properly anymore :-(
+    #page = urllib2.urlopen('http://na.leagueoflegends.com/champions')
+    #soup = BeautifulSoup(page)
+    #champData = soup.findAll(name=["div", "a"],
+    #                  attrs={"class" : ["lol_champion", "champion_name"]})
+    champions = clgChamps #makeChampMap(champData)
 
     fp = open('html/index.html', 'w')
 

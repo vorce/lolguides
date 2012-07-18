@@ -6,6 +6,7 @@ import sys, os
 sys.path.append(os.path.abspath('.'))
 import genpages, getguidedata
 
+from scrapeutils import *
 
 setup(
     name="Lolguides",
@@ -29,7 +30,7 @@ def champs(args):
     
 @task
 def data():
-    getguidedata.getGuideData(getguidedata.clgChamps) #getGuidesForAllChamps(getguidedata.clgChamps)
+    getguidedata.getGuideData(clgChamps) #getGuidesForAllChamps(getguidedata.clgChamps)
 
 @task
 def git():
