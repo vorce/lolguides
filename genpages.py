@@ -141,7 +141,7 @@ def genChampPage(cName, data, notice=""):
     csn = csName(cName)
     csChampUrl = csUrl.format(csn)
 
-    fp.write('<a href="{0}">Champion details @ ChampionSelect</a>\n'.format(csChampUrl))
+    fp.write('<a href="{0}">Counter-pick details at ChampionSelect</a>\n'.format(csChampUrl))
     #fp.write('<a href="http://soloqueue.com/#{0}">Champion details @ soloqueue.com</a>\n'.format(cName))
     fp.write('<br />\n\n')
 
