@@ -102,7 +102,8 @@ clgChamps = {
 'Varus':97,
 'Darius':98,
 'Draven':99,
-'Jayce':100
+'Jayce':100,
+'Zyra':101
 }
 
 def csName(c):
