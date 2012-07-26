@@ -1,4 +1,5 @@
 import urllib2
+import httplib
 import math
 import time
 
@@ -195,6 +196,10 @@ def getPage(url):
                 time.sleep(10) # wait 10 seconds then try again
         except urllib2.URLError, e:
             print("Exception: {0}".format(e))
+            print("Waiting 10 seconds, then retrying")
+            time.sleep(10) # wait 10 seconds then try again
+        except httplib.HTTPException:
+            print("HTTPException")
             print("Waiting 10 seconds, then retrying")
             time.sleep(10) # wait 10 seconds then try again
 
