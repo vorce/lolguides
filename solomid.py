@@ -26,7 +26,7 @@ def getGuides(url):
         infoType = getattr(g, 'attrs', None)
 
         # Do not include guides of another champion...
-        if infoType[0][0] == 'image':
+        if infoType[0][1] == 'image':
             chmp = getGuideChamp(g)
             if not url.endswith(chmp):
                 continue
