@@ -13,7 +13,8 @@ def getGuides(url):
         return {}
 
     soup = BeautifulSoup(page)
-    guideList = soup.findAll(name="div", attrs={"class":["title", "rating", "author"]})
+    guideList = soup.findAll(name="div", attrs={"class":["title", "rating",
+                                                         "author", "image"]})
     urls = []
     names = []
     ratings = []
@@ -23,7 +24,13 @@ def getGuides(url):
 
     for g in guideList:
         infoType = getattr(g, 'attrs', None)
-        
+
+        # Do not include guides of another champion...
+        if infoType[0][0] == 'image':
+            chmp = getGuideChamp(g)
+            if not url.endswith(chmp):
+                continue
+
         if infoType[0][1] == 'title':
             (url, name, update, featured) = getUrlNameUpdate(g)
             urls.append(url)
@@ -42,6 +49,10 @@ def getGuides(url):
     namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
     return dict(zip(urls, namesRatingsUpdates))
 
+def getGuideChamp(div):
+    i = div.find("img")
+    attr = getattr(i, 'attrs', None)
+    return attr[1][1]
 
 def getUrlNameUpdate(guide):
     urlAndName = guide.find("a")
