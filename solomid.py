@@ -29,29 +29,35 @@ def getGuides(url):
     for g in guideListItems:
         guideSections = g.findAll(name="div", attrs={"class":["title",
                                   "rating", "author", "image"]})
+
+        correctChamp = True
+
         for s in guideSections:
-        #for g in guideList:
             infoType = getattr(s, 'attrs', None)
 
             # Do not include guides of another champion...
             if infoType[0][1] == 'image':
                 chmp = getGuideChamp(s)
                 if not url.endswith(chmp):
-                    continue
-            elif infoType[0][1] == 'title':
-                (url, name, update, featured) = getUrlNameUpdate(s)
-                urls.append(url)
-                names.append(name)
-                featureds.append(featured)
-                updates.append(update)
-            elif infoType[0][1] == 'rating':
-                rating = getRating(s)
-                ratings.append(rating)
-            elif infoType[0][1] == 'author':
-                author = getAuthor(s)
-                authors.append(author)
-            else:
-                pass # something terrible has happened!!
+                    correctChamp = False
+
+        if correctChamp:
+            for s in guideSections:
+                infoType = getattr(s, 'attrs', None)
+                if infoType[0][1] == 'title':
+                    (url, name, update, featured) = getUrlNameUpdate(s)
+                    urls.append(url)
+                    names.append(name)
+                    featureds.append(featured)
+                    updates.append(update)
+                elif infoType[0][1] == 'rating':
+                    rating = getRating(s)
+                    ratings.append(rating)
+                elif infoType[0][1] == 'author':
+                    author = getAuthor(s)
+                    authors.append(author)
+                else:
+                    pass # something terrible has happened!!
     
     namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
     return dict(zip(urls, namesRatingsUpdates))
