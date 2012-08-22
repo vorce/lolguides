@@ -13,8 +13,12 @@ def getGuides(url):
         return {}
 
     soup = BeautifulSoup(page)
-    guideList = soup.findAll(name="div", attrs={"class":["title", "rating",
-                                                         "author", "image"]})
+    #guideList = soup.findAll(name="div", attrs={"class":["title", "rating",
+    #                                                     "author", "image"]})
+    guideUl = soup.find(name="ul", attrs={"class":["silverGuideList"]})
+    guideListItems = guideUl.findAll("li")[1:]
+
+
     urls = []
     names = []
     ratings = []
@@ -22,29 +26,32 @@ def getGuides(url):
     authors = []
     featureds = [] # It's a word.
 
-    for g in guideList:
-        infoType = getattr(g, 'attrs', None)
+    for g in guideListItems:
+        guideSections = g.findAll(name="div", attrs={"class":["title",
+                                  "rating", "author", "image"]})
+        for s in guideSections:
+        #for g in guideList:
+            infoType = getattr(s, 'attrs', None)
 
-        # Do not include guides of another champion...
-        if infoType[0][1] == 'image':
-            chmp = getGuideChamp(g)
-            if not url.endswith(chmp):
-                continue
-
-        if infoType[0][1] == 'title':
-            (url, name, update, featured) = getUrlNameUpdate(g)
-            urls.append(url)
-            names.append(name)
-            featureds.append(featured)
-            updates.append(update)
-        elif infoType[0][1] == 'rating':
-            rating = getRating(g)
-            ratings.append(rating)
-        elif infoType[0][1] == 'author':
-            author = getAuthor(g)
-            authors.append(author)
-        else:
-            pass # something terrible has happened!!
+            # Do not include guides of another champion...
+            if infoType[0][1] == 'image':
+                chmp = getGuideChamp(s)
+                if not url.endswith(chmp):
+                    continue
+            elif infoType[0][1] == 'title':
+                (url, name, update, featured) = getUrlNameUpdate(s)
+                urls.append(url)
+                names.append(name)
+                featureds.append(featured)
+                updates.append(update)
+            elif infoType[0][1] == 'rating':
+                rating = getRating(s)
+                ratings.append(rating)
+            elif infoType[0][1] == 'author':
+                author = getAuthor(s)
+                authors.append(author)
+            else:
+                pass # something terrible has happened!!
     
     namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
     return dict(zip(urls, namesRatingsUpdates))
