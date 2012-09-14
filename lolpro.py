@@ -24,13 +24,13 @@ def getGuides(url):
     page, skip = getPage(url)
 
     lolpro_ul_class = 'b-list b-list-a p-carousel-wrapper champ-guide-list'
+    guideItems = []
 
     if not skip:
         soup = BeautifulSoup(page)
         guideList = soup.findAll(name="ul", attrs={"class":lolpro_ul_class})
-        guideItems = guideList[0].findAll(name='li')
-    else:
-        guideItems = []
+        if len(guideList) > 0:
+            guideItems = guideList[0].findAll(name='li')
 
     urls = []
     names = []
