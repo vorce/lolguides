@@ -23,7 +23,7 @@ def getGuideData(c):
 def getGuides(url):
     page, skip = getPage(url)
 
-    lolpro_ul_class = 'b-list b-list-a p-carousel-wrapper champ-guide-list'
+    lolpro_ul_class = 'b-list b-list-a b-list_grid s-full j-guide-list' #'b-list b-list-a p-carousel-wrapper champ-guide-list'
     guideItems = []
 
     if not skip:
@@ -50,10 +50,10 @@ def getGuides(url):
 
         updates.append(-1) # No dates .. use -1 as specialcase = unknown
 
-        rating = int(g.findAll('span')[3].text.split(' ')[0])
+        rating = getRating(g) #int(g.findAll('span')[3].text.split(' ')[0])
         ratings.append(rating)
 
-        author = g.findAll('span')[1].text.split('by ')[1]
+        author = getAuthor(g) #g.findAll('span')[1].text.split('by ')[1]
         authors.append(author)
 
     namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
@@ -63,4 +63,12 @@ def getUrl(guideItem):
     return getattr(guideItem.find('a'), 'attrs')[0][1]
 
 def getName(guideItem):
-    return guideItem.find('span').text
+    return guideItem.find(name='li').text
+
+def getRating(guideItem):
+    return int(guideItem.findAll(name='li')[3].text.split(' ')[0])
+
+def getAuthor(guideItem):
+    return guideItem.findAll(name='li')[1].text.split('by ')[1]
+
+
