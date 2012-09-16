@@ -39,7 +39,9 @@ def getGuides(url):
     authors = []
     featureds = [] # It's a word.
 
-    for g in guideItems:
+    for i in range(len(guideItems) % 5):
+        #import pdb; pdb.set_trace()
+        g = guideItems[i*6]
         url = getUrl(g)
         urls.append(url)
 
