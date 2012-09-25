@@ -213,6 +213,14 @@ def genChampPage(cName, data, notice=""):
     fp.write('<script type="text/javascript"\n')
     fp.write('src="http://pagead2.googlesyndication.com/pagead/show_ads.js">\n')
     fp.write('</script>\n')
+
+    fp.write('<br /><!-- cpm star :/ -->\n')
+    fp.write('<SCRIPT language="Javascript">\n')
+    fp.write('  var cpmstar_rnd=Math.round(Math.random()*999999);\n')
+    fp.write('  var cpmstar_pid=36807;\n')
+    fp.write('document.writeln("<SCR"+"IPT language=\'Javascript\' src=\'http://server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"\'></SCR"+"IPT>");\n')
+    fp.write('</SCRIPT>\n')
+
     fp.write('      </div>\n')
     fp.write('  </div>\n')
     fp.write('</div>\n')
@@ -367,6 +375,15 @@ s.parentNode.insertBefore(po, s);\n\
     
     fp.write('</head>\n<body>\n')
 
+    # CPM star, left side ad :-(
+    fp.write('<div class="cpmstar_left">\n')
+    fp.write('    <SCRIPT language="Javascript">\n')
+    fp.write('      var cpmstar_rnd=Math.round(Math.random()*999999);\n')
+    fp.write('      var cpmstar_pid=36801;\n')
+    fp.write('document.writeln("<SCR"+"IPT language=\'Javascript\' src=\'http://server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"\'></SCR"+"IPT>");\n')
+    fp.write('   </SCRIPT>\n')
+    fp.write('</div>\n')
+
     fp.write('<!-- navigation top bar -->\n')
     fp.write('<div class="navbar navbar-fixed-top">\n')
     fp.write('<div class="navbar-inner">\n')
@@ -490,16 +507,12 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('src="http://pagead2.googlesyndication.com/pagead/show_ads.js">\n')
     fp.write('</script>\n<br />\n')
 
-    # skip "news". fuck dat. go minimalz nigga
-    '''fp.write('<h1>NEWS</h1>\n \
-            <div id="news">\n')
-
-    # insert news.txt
-    nfp = open('news.txt', 'r')
-    allNews = nfp.read()
-    nfp.close()
-    fp.write(allNews)
-    '''
+    fp.write('<!-- cpm star :/ -->\n')
+    fp.write('<SCRIPT language="Javascript">\n')
+    fp.write('  var cpmstar_rnd=Math.round(Math.random()*999999);\n')
+    fp.write('  var cpmstar_pid=36807;\n')
+    fp.write('document.writeln("<SCR"+"IPT language=\'Javascript\' src=\'http://server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"\'></SCR"+"IPT>");\n')
+    fp.write('</SCRIPT>\n')
 
     fp.write('<!-- g+ page -->\n')
     fp.write('<g:plus href="https://plus.google.com/111118564432197584206" size="badge"></g:plus>\n<br />\n')

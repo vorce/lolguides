@@ -27,6 +27,15 @@ img.logo {
     margin-top: 15px;
 }
 
+.cpmstar_left {
+    position: absolute;
+    top: 109px;
+    left: 30px;
+}
+
+.cpmstar_right {
+}
+
 .hero-unit h1 {
     font-family: 'Days One', sans-serif;
     font-size: 34pt;
