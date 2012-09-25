@@ -368,15 +368,6 @@ s.parentNode.insertBefore(po, s);\n\
     
     fp.write('</head>\n<body>\n')
 
-    # CPM star, left side ad :-(
-    fp.write('<div class="cpmstar_left">\n')
-    fp.write('    <SCRIPT language="Javascript">\n')
-    fp.write('      var cpmstar_rnd=Math.round(Math.random()*999999);\n')
-    fp.write('      var cpmstar_pid=36801;\n')
-    fp.write('document.writeln("<SCR"+"IPT language=\'Javascript\' src=\'http://server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"\'></SCR"+"IPT>");\n')
-    fp.write('   </SCRIPT>\n')
-    fp.write('</div>\n')
-
     fp.write('<!-- navigation top bar -->\n')
     fp.write('<div class="navbar navbar-fixed-top">\n')
     fp.write('<div class="navbar-inner">\n')
@@ -418,6 +409,14 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('Don\'t waste your time wading through pages of ')
     fp.write('out dated or low quality guides - let us filter ')
     fp.write('those out for you.</p>\n</div>\n\n')
+
+    fp.write('<!-- ad. ugh, im so sorry about this. it hurts. -->')
+    fp.write('<SCRIPT language="Javascript">\n')
+    fp.write('var cpmstar_rnd=Math.round(Math.random()*999999);\n')
+    fp.write('var cpmstar_pid=36802;\n')
+    fp.write('document.writeln("<SCR"+"IPT language=\'Javascript\' src=\'http://server.cpmstar.com/view.aspx?poolid="+cpmstar_pid+"&script=1&rnd="+cpmstar_rnd+"\'></SCR"+"IPT>");\n')
+    fp.write('</SCRIPT>\n')
+
     fp.write('        <h1>GUIDES</h1>\n')
     fp.write('        <div class="hero-unit">\n')
     
