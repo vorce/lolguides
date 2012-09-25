@@ -1,5 +1,4 @@
 import json
-import urllib2
 import datetime
 from BeautifulSoup import BeautifulSoup
 
@@ -16,7 +15,7 @@ htmlHeader = '<!doctype html>\n \
 <meta name="description" content="Champion guides for League of Legends. The top rated champion guides from the pro sites!"/>\n'
 
 htmlStyle = '<style type="text/css">\n \
-@import "../css/lg.css";\n \
+@import "../css/lg2.css";\n \
 </style>\n'
 
 #htmlMeta = <meta name="description" content="Champion guides for League of Legends"/>
@@ -306,12 +305,6 @@ def genIndex(notice=""):
     print("Generating index")
     print("With notice: {0}".format(notice))
 
-    # Used to get all champions from official site,
-    # seems to not be updated properly anymore :-(
-    #page = urllib2.urlopen('http://na.leagueoflegends.com/champions')
-    #soup = BeautifulSoup(page)
-    #champData = soup.findAll(name=["div", "a"],
-    #                  attrs={"class" : ["lol_champion", "champion_name"]})
     champions = clgChamps #makeChampMap(champData)
 
     fp = open('html/index.html', 'w')
