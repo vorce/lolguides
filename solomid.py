@@ -1,34 +1,24 @@
 from BeautifulSoup import BeautifulSoup
-import urllib2
-import httplib
-import time
 
-from scrapeutils import *
 
-def getGuides(url):
-    retry = True
-    page, skip = getPage(url)
-
+def getGuides(page, skip, url, conf_f):
     if skip:
         return {}
 
     soup = BeautifulSoup(page)
-    #guideList = soup.findAll(name="div", attrs={"class":["title", "rating",
-    #                                                     "author", "image"]})
-    guideUl = soup.find(name="ul", attrs={"class":["silverGuideList"]})
+    guideUl = soup.find(name="ul", attrs={"class": ["silverGuideList"]})
     guideListItems = guideUl.findAll("li")[1:]
-
 
     urls = []
     names = []
     ratings = []
     updates = []
     authors = []
-    featureds = [] # It's a word.
+    featureds = []  # It's a word.
 
     for g in guideListItems:
-        guideSections = g.findAll(name="div", attrs={"class":["title",
-                                  "rating", "author", "image"]})
+        guideSections = g.findAll(name="div", attrs={"class":
+                                  ["title", "rating", "author", "image"]})
 
         correctChamp = True
 
@@ -51,21 +41,23 @@ def getGuides(url):
                     featureds.append(featured)
                     updates.append(update)
                 elif infoType[0][1] == 'rating':
-                    rating = getRating(s)
+                    rating = getRating(s, conf_f)
                     ratings.append(rating)
                 elif infoType[0][1] == 'author':
                     author = getAuthor(s)
                     authors.append(author)
                 else:
-                    pass # something terrible has happened!!
-    
+                    pass  # something terrible has happened!!
+
     namesRatingsUpdates = zip(names, ratings, updates, authors, featureds)
     return dict(zip(urls, namesRatingsUpdates))
+
 
 def getGuideChamp(div):
     i = div.find("img")
     attr = getattr(i, 'attrs', None)
     return attr[1][1]
+
 
 def getUrlNameUpdate(guide):
     urlAndName = guide.find("a")
@@ -76,15 +68,17 @@ def getUrlNameUpdate(guide):
 
     return (url, name, update, featured)
 
+
 def getAuthor(guide):
     authorA = guide.find("a")
     author = authorA.text
     return author
 
-def getRating(guide):
-    rating = guide.findAll("span", attrs={"class":["green", "red"]})
+
+def getRating(guide, conf_f):
+    rating = guide.findAll("span", attrs={"class": ["green", "red"]})
     likes = int(rating[0].text)
     dislikes = int(rating[1].text)
 
-    return confidence_fixed(likes, dislikes)
+    return conf_f(likes, dislikes)
 

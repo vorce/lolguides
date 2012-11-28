@@ -1,12 +1,10 @@
 from paver.easy import *
 from paver.setuputils import setup
-from ftplib import FTP
-
-import sys, os
+import sys
+import os
 sys.path.append(os.path.abspath('.'))
-import genpages, getguidedata
-
-from scrapeutils import *
+import genpages
+import getguidedata
 
 setup(
     name="Lolguides",
@@ -17,33 +15,40 @@ setup(
     author_email="joelcb@gmail.com"
 )
 
+
 @task
 @consume_args
 def index(args):
     genpages.genIndex(args[0])
 
+
 @task
 @consume_args
 def champs(args):
-    dataz = genpages.loadJSONs() #('guide_data.json')
+    dataz = genpages.loadJSONs()  # ('guide_data.json')
     genpages.genAllChampPages(dataz, args[0])
-    
+
+
 @task
 def data():
-    getguidedata.getGuideData(clgChamps) #getGuidesForAllChamps(getguidedata.clgChamps)
+    getguidedata.getGuideData()
+
 
 @task
 def git():
     msg = 'Automated git commit from paver'
     os.system("git commit -a -m '{0}'".format(msg))
 
+
 @task
 def publish():
     os.system("./publish.sh")
 
+
 @task
 def test():
     print("Hello")
+
 
 @task
 @consume_args

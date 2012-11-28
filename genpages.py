@@ -1,8 +1,5 @@
-import json
 import datetime
-from BeautifulSoup import BeautifulSoup
-
-from scrapeutils import *
+import scrapeutils
 from genutils import *
 
 
@@ -20,10 +17,12 @@ htmlStyle = '<style type="text/css">\n \
 @import "../css/lg2.css";\n \
 </style>\n'
 
+
 # TODO:
 # Check for champ icon. If it doesn't exist use unknown.png.
 def genChampPage(cName, data, notice=""):
-    c = cleanName(cName)
+    scrape_util = scrapeutils.ScrapeUtils()
+    c = scrape_util.cleanName(cName)
 
     print('Creating html/champions/{0}.html'.format(c))
 
@@ -40,7 +39,7 @@ def genChampPage(cName, data, notice=""):
 
     metaKeywords = cName + ', League of Legends, Guide, LoL, Champion guide, Build, Online gaming, DOTA, MOBA, lolguides, lol guide' 
     fp.write('<meta name="keywords" content="{0}"/>'.format(metaKeywords))
-    
+
     fp.write('<link rel="shortcut icon" href="../gfx/favicon.ico" type="image/x-icon" />')
     fp.write('<title>{0} Guides | Lolguides</title>\n'.format(cName))
 
@@ -105,10 +104,10 @@ def genChampPage(cName, data, notice=""):
         fp.write('</div>\n')
 
     fp.write('<h1><img alt="{0}" class="champ" src="../gfx/{1}.png" /> {0}</h1>\n'.format(cName, c))
-   
+
     fp.write('<br />\n')
 
-    csn = csName(cName)
+    csn = scrape_util.csName(cName)  # championselect.net name
     csChampUrl = csUrl.format(csn)
 
     fp.write('<a href="{0}">Counter-pick details at ChampionSelect</a>\n'.format(csChampUrl))
@@ -207,8 +206,8 @@ def getGuideHtml(guideData):
         update = '?'
 
     site = url.split('/')[2]
-    sicon = None # source icon
-    ficon = None # featured icon
+    sicon = None  # source icon
+    ficon = None  # featured icon
     siteurl = 'http://{0}'.format(site)
 
     if site.find('solomid') != -1:
@@ -244,6 +243,7 @@ def genAllChampPages(data, notice=""):
     for c in data:
         genChampPage(c, data[c], notice)
 
+
 def makeChampMap(champs):
     champIds = []
     champNames = []
@@ -257,9 +257,10 @@ def makeChampMap(champs):
             champName = getChampName(c)
             champNames.append(champName)
         else:
-            pass #something's terribly wrong
+            pass  # something's terribly wrong
 
     return dict(zip(champNames, champIds))
+
 
 def getChampId(info):
     while getattr(info, 'name', None) != 'img':
@@ -268,15 +269,18 @@ def getChampId(info):
     champId = getattr(info, 'attrs', None)[0][1].split('/')[-1].split('.jpg')[0]
     return champId
 
+
 def getChampName(info):
     champName = info.text
     return champName
+
 
 def genIndex(notice=""):
     print("Generating index")
     print("With notice: {0}".format(notice))
 
-    champions = clgChamps #makeChampMap(champData)
+    scrape_util = scrapeutils.ScrapeUtils()
+    champions = scrape_util.getChampions()
 
     fp = open('html/index.html', 'w')
 
@@ -336,7 +340,7 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('<style type="text/css">\n \
              @import "css/lg2.css";\n \
              </style>\n')
-    
+
     fp.write('</head>\n<body>\n')
 
     fp.write('<!-- navigation top bar -->\n')
@@ -361,7 +365,6 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('</div>\n')
     fp.write('</div>\n')
 
-
     fp.write('<div class="container">\n')
     fp.write('  <div class="row">\n')
     fp.write('    <div class="span9">\n')
@@ -371,10 +374,10 @@ s.parentNode.insertBefore(po, s);\n\
         notice = "{0}: {1}".format(datetime.date.today().isoformat(), notice)
         fp.write('{0}\n'.format(notice))
         fp.write('</div>\n')
-        
+
     fp.write('    	<h1>WELCOME</h1>\n')
     fp.write('        <div class="hero-unit">\n')
-    
+
     fp.write('<p>LoLguides list only the top rated ')
     fp.write('and newest <a href="http://signup.leagueoflegends.com/?ref=4c1bb89e3f98e">League of Legends</a> champion guides from clgaming, solomid and curse\'s lolpro. ')
     fp.write('Don\'t waste your time wading through pages of ')
@@ -404,10 +407,10 @@ s.parentNode.insertBefore(po, s);\n\
     fp.write('     <tbody>\n')
 
     cIndex = 0
-    tableCols = 5 
+    tableCols = 5
     champions = sorted(champions)
     while cIndex < len(champions):
-        c = champions[cIndex]
+        c = champions[cIndex].get('name')
         # print('curl -O http://solomid.net/guide/champ/{0}.png;'.format(cleanName(c)))
 
         if cIndex % tableCols == 0:
@@ -495,13 +498,13 @@ s.parentNode.insertBefore(po, s);\n\
 
     fp.write('</div> <!-- /container -->\n')
 
-
     fp.write('<!-- bootstrap -->\n')
     fp.write('<script src="bootstrap/js/bootstrap.js"></script>\n')
 
     fp.write('</body>\n</html>\n')
 
     fp.close()
+
 
 def champUrl(c):
     url = c.replace(' ', '')
@@ -513,7 +516,7 @@ def champUrl(c):
     return url
 
 if __name__ == '__main__':
-    dataz = loadJSONs() # ('guide_data.json')
+    dataz = loadJSONs()  # ('guide_data.json')
     genAllChampPages(dataz)
     genIndex()
 

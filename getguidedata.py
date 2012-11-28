@@ -1,36 +1,24 @@
 # 2011 - 2012 Joel Carlbark
 #
-
-from BeautifulSoup import BeautifulSoup
-import urllib2
-import re
 import json
 import time
-import httplib
-import threading, signal
-import lolpro, clg, solomid
+import threading
+import signal
+import lolpro
+import clg
+import solomid
+import scrapeutils
 
-from scrapeutils import *
-
-champion_url = 'http://na.leagueoflegends.com/champions'
-
-# {url:[name, rating, updateDate]}
-# Akali : [dict1, dict2]
 
 class SourceScraper(threading.Thread):
-    def __init__(self, champs, source):
-        threading.Thread.__init__(self, name='Lolguides scraper, source {0}'.format(source))
+    def __init__(self, scrape_util, source):
+        threading.Thread.__init__(self, name='Lolguides scraper, source: {0}'.format(source))
         self._finished = threading.Event()
         signal.signal(signal.SIGINT, signal.SIG_DFL)
-        self._champs = champs
         self._source = source
+        self.scrape_util = scrape_util
 
-        if source == 0:
-            self._outjson = 'solomid_data.json'
-        elif source == 1:
-            self._outjson = 'clg_data.json'
-        elif source == 2:
-            self._outjson = 'lolpro_data.json'
+        self._outjson = '{0}_data.json'.format(source)
 
     def shutdown(self, timeout=None):
         self._finished.set()
@@ -41,31 +29,44 @@ class SourceScraper(threading.Thread):
     def getGuideData(self):
         guideMap = {}
 
-        for c in self._champs:
+        for i in self.scrape_util.getChampions():
+            # Elophant "A champion with an id of "0" does not exist.
+            # We use it to deal with exceptions." 
+            if i.get('id', 0) == 0:
+                continue
+
+            c = i.get('name')
+
             print("{0}: Getting guide data for {1}".format(self.getName(), c))
-            cClean = cleanName(c)
+            cClean = self.scrape_util.cleanName(c)
 
-            if self._source == 0:
-                # solomidUrl = 'http://www.solomid.net/guide/champion.php?name={0}'.format(cClean)
-                solomidUrl = 'http://www.solomid.net/guides.php?champ={0}'.format(cClean)
-                solomidGuides = solomid.getGuides(solomidUrl)
-                solomidTopGuides = filterTop(solomidGuides)
-                #print solomidTopGuides
+            champURL = ''
+            if self._source == 'solomid':
+                champURL = 'http://www.solomid.net/guides.php?champ={0}'.format(cClean)
+            elif self._source == 'clg':
+                clgId = self.scrape_util.clgChamps[c]
+                champURL = 'http://www.clgaming.net/guides/?champion={0}'.format(clgId)
+            elif self._source == 'lolpro':
+                champURL = 'http://www.lolpro.com/guides/{0}'.format(cClean)
 
-                #print('----------------------')
-                solomidNewGuide = filterNewest(solomidGuides)
-                guideMap[c] = [solomidTopGuides, solomidNewGuide]
+            page, skip = self.scrape_util.getPage(champURL)
 
-            elif self._source == 1:
-                clgUrl = 'http://www.clgaming.net/guides/?champion={0}'.format(self._champs[c])
-                clgGuides = clg.getGuides(clgUrl)
-                clgTopGuides = filterTop(clgGuides)
-                clgNewGuide = filterNewest(clgGuides)
-                guideMap[c] = [clgTopGuides, clgNewGuide]
-            
-            elif self._source == 2:
-                (ltop, lnew) = lolpro.getGuideData(c)
-                guideMap[c] = [ltop, lnew]
+            if self._source == 'solomid':
+                solomidGuides = solomid.getGuides(page, skip, champURL,
+                                                  self.scrape_util.confidence_fixed)
+                solomidTopGuides = self.scrape_util.filterTop(solomidGuides)
+                solomidNewGuides = self.scrape_util.filterNewest(solomidGuides)
+                guideMap[c] = [solomidTopGuides, solomidNewGuides]
+            elif self._source == 'clg':
+                clgGuides = clg.getGuides(page, skip)
+                clgTopGuides = self.scrape_util.filterTop(clgGuides)
+                clgNewGuides = self.scrape_util.filterNewest(clgGuides)
+                guideMap[c] = [clgTopGuides, clgNewGuides]
+            elif self._source == 'lolpro':
+                curseGuides = lolpro.getGuides(page, skip)
+                curseTopGuides = self.scrape_util.filterTop(curseGuides)
+                curseNewGuides = self.scrape_util.filterNewest(curseGuides)
+                guideMap[c] = [curseTopGuides, curseNewGuides]
 
             time.sleep(0.01)
 
@@ -78,11 +79,14 @@ class SourceScraper(threading.Thread):
         fp.write(json_out)
         fp.close()
 
-        
-def getGuideData(champs):
-    tsmscraper = SourceScraper(champs, 0)
-    clgscraper = SourceScraper(champs, 1)
-    lolproscraper = SourceScraper(champs, 2)
+
+def getGuideData():
+    scrape_util = scrapeutils.ScrapeUtils()
+    scrape_util.getChampions()
+
+    tsmscraper = SourceScraper(scrape_util, 'solomid')
+    clgscraper = SourceScraper(scrape_util, 'clg')
+    lolproscraper = SourceScraper(scrape_util, 'lolpro')
 
     tsmscraper.start()
     clgscraper.start()
@@ -93,5 +97,5 @@ def getGuideData(champs):
     lolproscraper.join()
 
 if __name__ == '__main__':
-    getGuideData(clgChamps)
+    getGuideData()
 
