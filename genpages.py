@@ -408,19 +408,21 @@ s.parentNode.insertBefore(po, s);\n\
 
     cIndex = 0
     tableCols = 5
-    champions = sorted(champions)
+    champions = filter(lambda c: c['id'] != 0, champions)  # remove 'N/A' entries
+    champions = sorted(champions, key=lambda c: c['name'])  # sort by name
+
     while cIndex < len(champions):
-        c = champions[cIndex].get('name')
-        # print('curl -O http://solomid.net/guide/champ/{0}.png;'.format(cleanName(c)))
+        if champions[cIndex].get('id', 0) != 0:
+            c = champions[cIndex].get('name')
+            # print('curl -O http://solomid.net/guide/champ/{0}.png;'.format(cleanName(c)))
 
-        if cIndex % tableCols == 0:
-            fp.write('<tr>\n')
+            if cIndex % tableCols == 0:
+                fp.write('<tr>\n')
 
-        fp.write('<td><a href="{0}">{1}</a></td>'.format(champUrl(c), c))
+            fp.write('<td><a href="{0}">{1}</a></td>'.format(champUrl(c), c))
 
-        if cIndex % tableCols == (tableCols - 1):
-            fp.write('</tr>\n')
-
+            if cIndex % tableCols == (tableCols - 1):
+                fp.write('</tr>\n')
         cIndex = cIndex + 1
    
     fp.write('</tbody>\n</table>\n</div>\n\n')
