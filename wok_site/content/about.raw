@@ -1,0 +1,48 @@
+title: About
+url: /about.html
+type: about
+---
+<p>
+            Lolguides started out as a personal little resource, to help
+            me quickly access only the most reliable and up to date
+            champion guides.
+            </p>
+            <p>
+At the moment only <a
+                    href="http://www.solomid.net">solomid's</a> and <a
+                    href="http://www.clgaming.net">clgaming's</a> and
+                <a href="http://lolpro.com">lolpro's</a> (Curse gaming) guides are included.
+                Later I might add <a
+                    href="http://leaguecraft.com">leaguecraft</a>, <a
+                    href="http://www.mobafire.com">mobafire</a> or other places with
+                quality LoL guides.
+                </p>
+                <p>
+                The motivation for this site was simply that it was starting to
+                get frustrating having to check multiple sites for guides. Now
+                the best and latest are in one place! Hoorah.
+                </p>
+                <p>
+                Some technical details for the curious: The data is scraped
+                by
+                a python script (using <a
+                    href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>) and output to 
+                a nice, clean JSON dump. Another python program is responsible
+                for generating all the champion pages (and the index, but not this
+                about page) from the data dump. The site is rebuilt a whole
+                bunch of times per day to make sure it stays up to date.
+                <p><br />
+                If you want to drop feedback, feel free to e-mail
+                admin@lolguides.net
+
+                <br />
+                <!-- g+ page -->
+                <g:plus href="https://plus.google.com/111118564432197584206" size="badge"></g:plus>
+                <!-- flattr button -->
+                 <a class="FlattrButton" style="display:none;" href="http://lolguides.net"></a>
+                <noscript><a href="http://flattr.com/thing/506833/Lolguides-net" target="_blank">
+                <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"/></a></noscript>
+                
+                
+                </p>
+
