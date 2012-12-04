@@ -284,3 +284,7 @@ body {
     text-shadow: none;
     font-weight: 600;
 }
+
+.alert {
+    font-family: 'Source Sans Pro', sans-serif;
+}
