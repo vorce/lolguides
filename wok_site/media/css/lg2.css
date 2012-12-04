@@ -279,3 +279,8 @@ body {
     font-size: 8pt;
     color: #bbb;
 }
+
+.label {
+    text-shadow: none;
+    font-weight: 600;
+}
