@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Lolguides - League of Legends champion guides</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Champion guides for League of Legends. The top rated champion guides from the pro sites!">
+    <meta name="author" content="lolguides.net">
+    <meta name="keywords" content="Lolguides.net, Lolguides, League of Legends, LoL, Guides, Champion guides, Builds, Items, Skills, Clgaming, Solomid, TSM, CLG, Riot, Online gaming, DOTA, MOBA"/>
+    <link rel="shortcut icon" href="gfx/favicon.ico" type="image/x-icon" />
+
+    <!-- google analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];   _gaq.push(['_setAccount', 'UA-27511188-1']);  _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript';ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();
+</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700|Varela' rel='stylesheet' type='text/css'>
+
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 800px;
+      }
+
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+        font-family: 'Varela', serif;
+        padding: 120px;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+        color: white;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      /* Supporting marketing content */
+      .marketing {
+        margin: 60px 0;
+      }
+
+      .marketing p + h4 {
+        color: white;
+        margin-top: 38px;
+      }
+    </style>
+
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/lg2.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right frontnav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://blog.lolguides.net">Blog</a></li>
+        </ul>
+        <h1><a href="index.html">Lolguides.net</a></h1>
+      </div>
+      {{ page.notice }}
+      <div class="hero-unit">
+        <div style="margin: 0 auto; text-align: center;">
+            <p class="lead">Enter the champion you would like to see quality, up-to-date guides for</p>
+            <!-- <form id="search_champ_form" method="post"
+                onSubmit="goToChampion($('input[name=champ_typeahead_name]').val())">
+                -->
+                <input type="text" class="champ_input" id="champ_typeahead"
+                    name="champ_typeahead_name" style="margin: 0 auto;">
+                <!-- <button type="submit" class="btn btn-large"><i class="icon-search"></i></button>
+            </form> -->
+        </div>
+       </div>
+       <div class="hero-unit">
+
+        {{ page.content }}
+
+        </div> <!-- hero unit -->
+        <p class="footer">Last update: {{ site.datetime }} <br />
+        Lolguides.net (c) 2011 - 2013</p>
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="jquery-1.8.3.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script>  
+    var subjects = {{ page.typeahead_champs }} ;
+    $('#champ_typeahead').typeahead({source: subjects,
+        highlighter: function (item) {
+            var query = this.query.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, '\\$&')
+            return item.replace(new RegExp('(' + query + ')', 'ig'), function ($1, match) {
+                return '<strong>' + match + '</strong>'
+            })
+        },
+        updater: function (item) {
+            document.location = "http://lolguides.net/champions/" + getChampionURL(item);
+            return item;
+        }
+        
+    });
+
+    function getCleanChampName(champ) {
+        "use strict";
+        var clean;
+
+        clean = champ.toLowerCase();
+        clean = clean.replace(" ", "-");
+        clean = clean.replace("'", "");
+        clean = clean.replace(".", "");
+
+        return clean;
+     }
+
+     function getChampionURL(champ) {
+        "use strict";
+        var url;
+
+        url = getCleanChampName(champ) + ".html";
+
+        return url;
+     }
+
+     function goToChampion(inp) {
+        "use strict";
+        var url;
+
+        url = "http://lolguides.net/";
+        
+        if(subjects.indexOf(inp) > -1) {
+            url = url + "champions/" + getChampionURL(inp);
+        } else {
+            url = url + "index.html";
+        }
+
+        document.location = url;
+     }
+    </script>
+  </body>
+</html>
+      
