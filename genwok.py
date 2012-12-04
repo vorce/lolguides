@@ -229,7 +229,7 @@ def champUrl(c):
 if __name__ == '__main__':
     dataz = loadJSONs()  # ('guide_data.json')
 
-    if len(sys.argv) == 0:
+    if len(sys.argv) <= 1:
         genAllChampPages(dataz)
         genIndex('wok_site/content/home.raw')
     else:
