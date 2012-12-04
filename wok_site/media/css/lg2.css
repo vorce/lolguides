@@ -42,12 +42,12 @@ img.logo {
 }
 
 .hero-unit p {
-    font-family: 'Varela', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 15pt;
 }
 
 #champs {
-    font-family: 'Varela', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 14pt; 
     font-weight: normal;
 }
@@ -62,7 +62,7 @@ img.logo {
 }
 
 .frontnav {
-     font-family: 'Varela', sans-serif;
+     font-family: 'Source Sans Pro', sans-serif;
      font-size: 12pt;
 }
 
@@ -88,7 +88,7 @@ img.logo {
 .guidetable {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 2px;
-    font-family: 'Varela', serif;
+    font-family: 'Source Sans Pro', serif;
     background-color: rgba(127, 127, 127, 0.1);
     border-top: 1px solid rgba(30, 30, 30, 0.1);
 }
@@ -147,7 +147,7 @@ img.champ {
 }
 
 table.table-guide {
-    font-family: 'Varela', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     padding-bottom: 0;
     height: 100px;
 }
@@ -205,7 +205,7 @@ body {
 }
 
 .masthead h1 a {
-    font-family: 'Playfair Display SC', serif; //'Varela', sans-serif;
+    font-family: 'Playfair Display SC', serif;
     font-size: 36pt;
     color: #fdf6e3;
     text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.5);
@@ -218,7 +218,7 @@ body {
 
 .dropdown-menu {
     font-size: 14pt;
-    font-family: 'Varela', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     width: 210px;
 }
 
@@ -241,7 +241,7 @@ body {
 
 .media-body ul {
     list-style-type: none;
-    font-family: 'Varela', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 10pt;
     padding: 0;
     margin: 5px;
@@ -270,7 +270,7 @@ body {
 }
 
 .champ_input {
-    font-family: 'Varela', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 16pt;
     width: 200px;
 }
