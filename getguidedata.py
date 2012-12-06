@@ -7,12 +7,14 @@ import signal
 import lolpro
 import clg
 import solomid
+import lolking
 import scrapeutils
+import sys
 
 
 class SourceScraper(threading.Thread):
     def __init__(self, scrape_util, source):
-        threading.Thread.__init__(self, name='Lolguides scraper, source: {0}'.format(source))
+        threading.Thread.__init__(self, name='Guide scraper, source [{0}]'.format(source))
         self._finished = threading.Event()
         signal.signal(signal.SIGINT, signal.SIG_DFL)
         self._source = source
@@ -31,7 +33,7 @@ class SourceScraper(threading.Thread):
 
         for i in self.scrape_util.getChampions():
             # Elophant "A champion with an id of "0" does not exist.
-            # We use it to deal with exceptions." 
+            # We use it to deal with exceptions."
             if i.get('id', 0) == 0:
                 continue
 
@@ -48,6 +50,10 @@ class SourceScraper(threading.Thread):
                 champURL = 'http://www.clgaming.net/guides/?champion={0}'.format(clgId)
             elif self._source == 'lolpro':
                 champURL = 'http://www.lolpro.com/guides/{0}'.format(cClean)
+            elif self._source == 'lolking':
+                champURL = 'http://www.lolking.net/guides/list.php?champion={0}'.format(cClean)
+            else:
+                return guideMap
 
             page, skip = self.scrape_util.getPage(champURL)
 
@@ -67,6 +73,11 @@ class SourceScraper(threading.Thread):
                 curseTopGuides = self.scrape_util.filterTop(curseGuides)
                 curseNewGuides = self.scrape_util.filterNewest(curseGuides)
                 guideMap[c] = [curseTopGuides, curseNewGuides]
+            elif self._source == 'lolking':
+                kingGuides = lolking.getGuides(page, skip, champURL)
+                kingTopGuides = self.scrape_util.filterTop(kingGuides)
+                kingNewGuides = self.scrape_util.filterNewest(kingGuides)
+                guideMap[c] = [kingTopGuides, kingNewGuides]
 
             time.sleep(0.01)
 
@@ -80,22 +91,21 @@ class SourceScraper(threading.Thread):
         fp.close()
 
 
-def getGuideData():
+def getGuideData(sources):
     scrape_util = scrapeutils.ScrapeUtils()
     scrape_util.getChampions()
 
-    tsmscraper = SourceScraper(scrape_util, 'solomid')
-    clgscraper = SourceScraper(scrape_util, 'clg')
-    lolproscraper = SourceScraper(scrape_util, 'lolpro')
+    scrapers = []
+    for s in sources:
+       scrapers.append(SourceScraper(scrape_util, s)) 
 
-    tsmscraper.start()
-    clgscraper.start()
-    lolproscraper.start()
+    for s in scrapers:
+        s.start()
 
-    tsmscraper.join()
-    clgscraper.join()
-    lolproscraper.join()
+    for s in scrapers:
+        s.join()
 
+# Ex: getguidedata.py solomid clg lolpro lolking
 if __name__ == '__main__':
-    getGuideData()
+    getGuideData(sys.argv[1:])
 

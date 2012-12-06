@@ -1,7 +1,7 @@
 from BeautifulSoup import BeautifulSoup
 
 
-def getGuides(page, skip, url, conf_f):
+def getGuides(page, skip, champURL, conf_f):
     if skip:
         return {}
 
@@ -28,7 +28,7 @@ def getGuides(page, skip, url, conf_f):
             # Do not include guides of another champion...
             if infoType[0][1] == 'image':
                 chmp = getGuideChamp(s)
-                if not url.endswith(chmp):
+                if not champURL.endswith(chmp):
                     correctChamp = False
 
         if correctChamp:
