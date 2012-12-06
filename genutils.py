@@ -5,7 +5,7 @@ def loadJSONs():
     lolproDump = loadJSON('lolpro_data.json')
     clgDump = loadJSON('clg_data.json')
     tsmDump = loadJSON('solomid_data.json')
-    lolkingDump = loadJSON('lolking_data.jon')
+    lolkingDump = loadJSON('lolking_data.json')
 
     return concatJSONDumps({'lolpro': lolproDump, 'tsm': tsmDump,
                             'lolking': lolkingDump, 'clg': clgDump}) 
