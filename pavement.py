@@ -30,8 +30,8 @@ def champs(args):
 
 
 @task
-def data():
-    getguidedata.getGuideData()
+def data(args):
+    getguidedata.getGuideData(args)
 
 
 @task
@@ -53,7 +53,7 @@ def test():
 @task
 @consume_args
 def all(args):
-    data()
+    data(['solomid', 'clg', 'lolpro', 'lolking'])
 
     indexNotice = ""
     if len(args) > 0:
@@ -67,4 +67,3 @@ def all(args):
     index(indexNotice)
     git()
     publish()
-
