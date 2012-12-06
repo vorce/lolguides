@@ -102,6 +102,8 @@ def getGuideHtml(guideData):
         sicon = '../gfx/icons/clglogo.png'
     elif site.find('lolpro') != -1:
         sicon = '../gfx/icons/curselogo.png'
+    elif site.find('lolking') != -1:
+        sicon = '../gfx/icons/kinglogo.png'
 
     if featured:
         ficon = '../gfx/icons/featured.png'
