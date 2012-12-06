@@ -63,7 +63,7 @@ def getUrlNameUpdate(guide):
     urlAndName = guide.find("a")
     url = 'http://solomid.net/{0}'.format(getattr(urlAndName, 'attrs', None)[0][1])
     name = getattr(urlAndName, 'attrs', None)[1][1]
-    update = int(getattr(guide, 'text', None).split(' ')[-3])
+    update = int(guide.text.split(' ')[-4])
     featured = (guide.span.text == 'FEATURED')
 
     return (url, name, update, featured)
