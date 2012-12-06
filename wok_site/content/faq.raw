@@ -22,7 +22,7 @@ type: faq
                 enough.<br />
                 </p>
                 <hr />
-                <p>Q: What does the rating mean?<p>
+                <p>Q: What does the rating mean?</p>
                 <p>A: The rating is just a numerical representation of a guide's
                 grade on its source site. This means you can't really compare
                 guides from different source sites.
@@ -37,6 +37,7 @@ type: faq
                 into a number. So 1 crown = 2 in rating, 0.5 crown = 1 in
                 rating. 2.5 crowns = 5 rating, etc.</li>
                 </p>
+                <hr />
                 <p>Q: What does gray star and gold star mean?
                 </p>
                 <p>A: Gray star means the guide is not featured on its source
