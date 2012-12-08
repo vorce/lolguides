@@ -114,7 +114,8 @@ class ScrapeUtils:
         'Syndra': 104,
         'Kha\'Zix': 105,
         'Elise': 106,
-        'Zed':107
+        'Zed': 107,
+        'Nami': 108
         }
         self.elophant_key = 'Dy48E5sTZp2Kq5f4oqCR'
         self.elophant_champs = {}
