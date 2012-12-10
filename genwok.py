@@ -1,7 +1,7 @@
 import datetime
 import scrapeutils
 import sys
-from genutils import *
+import genutils
 
 
 csUrl = 'http://www.championselect.net/champ/{0}'
@@ -34,11 +34,12 @@ def genChampPage(cName, data, notice=""):
 
     topGuidesHTML = ''
 
-    # top guides by rating. highest first.
-    sortedByRating = sorted(data[0].items(), key=lambda g: g[1][1], reverse=True)
+    # top guides, featured first
+    sortedByFeatured = sorted(data[0].items(),
+                              key=lambda g: g[1][4], reverse=True)
 
     guideIndex = 0
-    for g in sortedByRating:
+    for g in sortedByFeatured:
         if guideIndex % 2 == 0:
             topGuidesHTML += getGuideHtml(g)
         guideIndex += 1
@@ -47,7 +48,7 @@ def genChampPage(cName, data, notice=""):
     topGuidesHTML += ' <div class="span4"> <!-- col 2 -->\n'
 
     guideIndex = 0
-    for g in sortedByRating:
+    for g in sortedByFeatured:
         if guideIndex % 2 == 1:
             topGuidesHTML += getGuideHtml(g)
         guideIndex += 1
@@ -229,7 +230,7 @@ def champUrl(c):
     return url
 
 if __name__ == '__main__':
-    dataz = loadJSONs()  # ('guide_data.json')
+    dataz = genutils.loadJSONs()  # ('guide_data.json')
 
     if len(sys.argv) <= 1:
         genAllChampPages(dataz)
