@@ -46,7 +46,7 @@ class SourceScraper(threading.Thread):
             if self._source == 'solomid':
                 champURL = 'http://www.solomid.net/guides.php?champ={0}'.format(cClean)
             elif self._source == 'clg':
-                clgId = self.scrape_util.clgChamps[c]
+                clgId = self.scrape_util.getClgId(c)
                 champURL = 'http://www.clgaming.net/guides/?champion={0}'.format(clgId)
             elif self._source == 'lolpro':
                 champURL = 'http://www.lolpro.com/guides/{0}'.format(cClean)

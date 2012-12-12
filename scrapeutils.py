@@ -228,6 +228,12 @@ class ScrapeUtils:
 
         return (page, skip)
 
+    
+    def getClgId(self, name):
+        for c in self.clgChamps:
+            if c.get('name', '') == name:
+                return c.get('id', 0)
+
     # https://possiblywrong.wordpress.com/2011/06/05/reddits-comment-ranking-algorithm/
     # Thanks!
     def confidence_fixed(self, ups, downs):
