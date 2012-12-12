@@ -85,10 +85,9 @@ class SourceScraper(threading.Thread):
         print("{0}: Done, wrote {1}".format(self.getName(), self._outjson))
 
     def dumpJSON(self, dataz):
-        fp = open(self._outjson, 'w')
-        json_out = json.dumps(dataz, indent=2)
-        fp.write(json_out)
-        fp.close()
+        with open(self._outjson, 'w') as fp:
+            json_out = json.dumps(dataz, indent=2)
+            fp.write(json_out)
 
 
 def getGuideData(sources):

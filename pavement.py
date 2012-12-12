@@ -3,12 +3,13 @@ from paver.setuputils import setup
 import sys
 import os
 sys.path.append(os.path.abspath('.'))
-import genpages
+import genwok
 import getguidedata
+import genutils
 
 setup(
     name="Lolguides",
-    packages=['genpages', 'getguidedata'],
+    packages=['genwok', 'getguidedata'],
     version="1.0",
     url="http://www.lolguides.net/",
     author="Joel Carlbark",
@@ -19,17 +20,18 @@ setup(
 @task
 @consume_args
 def index(args):
-    genpages.genIndex(args[0])
+    genwok.genIndex(args[0])
 
 
 @task
 @consume_args
 def champs(args):
-    dataz = genpages.loadJSONs()  # ('guide_data.json')
-    genpages.genAllChampPages(dataz, args[0])
+    dataz = genutils.loadJSONs()  # ('guide_data.json')
+    genwok.genAllChampPages(dataz, args[0])
 
 
 @task
+@consume_args
 def data(args):
     getguidedata.getGuideData(args)
 
