@@ -74,7 +74,8 @@ class SourceScraper(threading.Thread):
                 curseNewGuides = self.scrape_util.filterNewest(curseGuides)
                 guideMap[c] = [curseTopGuides, curseNewGuides]
             elif self._source == 'lolking':
-                kingGuides = lolking.getGuides(page, skip, champURL)
+                kingGuides = lolking.getGuides(page, skip, champURL,
+                                               self.scrape_util.confidence_fixed)
                 kingTopGuides = self.scrape_util.filterTop(kingGuides)
                 kingNewGuides = self.scrape_util.filterNewest(kingGuides)
                 guideMap[c] = [kingTopGuides, kingNewGuides]

@@ -6,13 +6,15 @@ from BeautifulSoup import BeautifulSoup
 lolking_url_base = 'http://www.lolking.net'
 
 
-def getGuides(page, skip, champURL):
+def getGuides(page, skip, champURL, rating_func=None):
     lolking_div_style = 'border-bottom: 1px solid #111; display: table-cell; padding: 12px 8px 4px 4px; text-align: left; vertical-align: top;'
     guideItems = []
 
     if not skip:
         soup = BeautifulSoup(page)
         guideItems = soup.findAll(name="div", attrs={"class": "guide-row"})
+    else:
+        return {}
 
     urls = []
     names = []
@@ -23,7 +25,8 @@ def getGuides(page, skip, champURL):
 
     sutil = scrapeutils.ScrapeUtils()
     for i in guideItems:
-        champName = sutil.cleanName(i.div.text)
+        champName = i.findAll('div')[3].text
+        champName = sutil.cleanName(champName)
 
         if not champURL.endswith(champName):
             continue  # skip if not correct champ
@@ -36,7 +39,7 @@ def getGuides(page, skip, champURL):
         name = getName(guideBasics)
         names.append(name)
 
-        rating = getRating(i)
+        rating = getRating(i, rating_func)
         ratings.append(rating)
 
         update = getUpdate(guideBasics)
@@ -60,9 +63,21 @@ def getName(guideItem):
     return guideItem.a.text
 
 
-def getRating(guideItem):
+def getRating(guideItem, rating_func=None):
     rating = 0
 
+    upvote_style = "font-size: 14px; color:#54c200; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); line-height: 10px;"
+    upvotes = int(guideItem.find(name="div", attrs={"style": upvote_style}).text)
+
+    downvote_style = "font-size: 14px; color:#d90014; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); line-height: 10px;"
+    downvotes = int(guideItem.find(name="div", attrs={"style": downvote_style}).text)
+
+    if rating_func is not None:
+        return rating_func(upvotes, downvotes)
+
+    return 0
+
+    """
     rating_list = guideItem.find(name='ul', attrs={'class': 'crown_rating'})
     if not rating_list:
         return rating
@@ -74,8 +89,8 @@ def getRating(guideItem):
         rating += (len(full) * 2)
     if half:
         rating += len(half)
-
-    return rating
+    """
+    # return rating
 
 
 def getFeatured(guideItem):
