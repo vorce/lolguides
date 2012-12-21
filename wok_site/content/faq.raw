@@ -33,9 +33,7 @@ type: faq
                 from reddit</a>.</li>
                 <li>Clg: Rating is simply the number of likes</li>
                 <li>Lolpro: Again, the rating is just the number of likes</li>
-                <li>Lolking: The rating is their star/crown system converted
-                into a number. So 1 crown = 2 in rating, 0.5 crown = 1 in
-                rating. 2.5 crowns = 5 rating, etc.</li>
+                <li>Lolking: Same as solomid.</li>
                 </ul>
                 </p>
                 <hr />
