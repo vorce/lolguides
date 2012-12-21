@@ -12,7 +12,7 @@ def getGuides(page, skip, champURL, rating_func=None):
 
     if not skip:
         soup = BeautifulSoup(page)
-        guideItems = soup.findAll(name="div", attrs={"class": "guide-row"}) +
+        guideItems = soup.findAll(name="div", attrs={"class": "guide-row"})
         featuredRows = soup.findAll(name="div", attrs={"class": "guide-row-featured guide-row-featured-top guide-row"})
         guideItems += featuredRows
     else:
@@ -66,8 +66,6 @@ def getName(guideItem):
 
 
 def getRating(guideItem, rating_func=None):
-    rating = 0
-
     upvote_style = "font-size: 14px; color:#54c200; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6); line-height: 10px;"
     upvotes = int(guideItem.find(name="div", attrs={"style": upvote_style}).text)
 
