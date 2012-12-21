@@ -12,7 +12,9 @@ def getGuides(page, skip, champURL, rating_func=None):
 
     if not skip:
         soup = BeautifulSoup(page)
-        guideItems = soup.findAll(name="div", attrs={"class": "guide-row"})
+        guideItems = soup.findAll(name="div", attrs={"class": "guide-row"}) +
+        featuredRows = soup.findAll(name="div", attrs={"class": "guide-row-featured guide-row-featured-top guide-row"})
+        guideItems += featuredRows
     else:
         return {}
 
