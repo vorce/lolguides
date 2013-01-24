@@ -116,7 +116,8 @@ class ScrapeUtils:
             {'name': 'Elise', 'id': 106},
             {'name': 'Zed', 'id': 107},
             {'name': 'Nami', 'id': 108},
-            {'name': 'Vi', 'id': 109}
+            {'name': 'Vi', 'id': 109},
+            {'name': 'Thresh', 'id': 110}
         ]
         self.elophant_key = 'Dy48E5sTZp2Kq5f4oqCR'
         self.elophant_champs = {}
